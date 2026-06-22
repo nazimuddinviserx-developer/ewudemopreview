@@ -5,9 +5,9 @@ export const SITE = {
   short: "EWU",
   tagline: "Excellence in Education",
   address: "A/2, Jahurul Islam Avenue, Jahurul Islam City, Aftabnagar, Dhaka-1212, Bangladesh",
-  phone: "+880 9666 775577",
-  emergency: "+880 1755 587224",
-  email: "info@ewubd.edu",
+  phone: "+880 1XXX-000 000",
+  emergency: "+880 1XXX-000 911",
+  email: "hello@example-ewu.edu",
   socials: {
     facebook: "https://facebook.com/ewubd",
     instagram: "https://instagram.com/ewubd",
@@ -104,10 +104,10 @@ export const ACHIEVEMENTS = [
 ];
 
 export const ALUMNI = [
-  { img: "alum-1", name: "Tahmid Karim", batch: "BBA 2018", role: "Founder, ChaloPay", body: "Built a fintech serving 200,000 users across Bangladesh." },
-  { img: "alum-2", name: "Sumaiya Hossain", batch: "BBA 2016", role: "VP, BRAC Bank", body: "Leads the retail digital banking transformation at one of Bangladesh's largest banks." },
-  { img: "alum-3", name: "Rashed Mahmud", batch: "EEE 2017", role: "Senior Engineer, Samsung Korea", body: "Designs next-generation memory chips at Samsung's Hwaseong campus." },
-  { img: "alum-4", name: "Dr. Nabila Anjum", batch: "Pharmacy 2019", role: "Medical Officer, Square Hospitals", body: "Practising clinician and clinical research collaborator with icddr,b." },
+  { img: "alum-1", name: "Tahmid Karim", batch: "BBA 2018", role: "Founder, ChaloPay", body: "Built a fintech serving 200,000 users across Bangladesh.", quote: "EWU's business clinics turned my final-year case study into a real product. The mentors believed in the idea long before any investor did." },
+  { img: "alum-2", name: "Sumaiya Hossain", batch: "BBA 2016", role: "VP, BRAC Bank", body: "Leads the retail digital banking transformation at one of Bangladesh's largest banks.", quote: "Every leadership instinct I rely on today, public speaking, ethical decisions, working across cultures, was first trained inside an EWU classroom." },
+  { img: "alum-3", name: "Rashed Mahmud", batch: "EEE 2017", role: "Senior Engineer, Samsung Korea", body: "Designs next-generation memory chips at Samsung's Hwaseong campus.", quote: "EWU faculty pushed me to publish my first paper as an undergrad. That single push is the reason I was chosen for Samsung's R&D track." },
+  { img: "alum-4", name: "Dr. Nabila Anjum", batch: "Pharmacy 2019", role: "Medical Officer, Square Hospitals", body: "Practising clinician and clinical research collaborator with icddr,b.", quote: "The clinical exposure EWU arranged with leading Dhaka hospitals shaped me into a doctor before I ever wore the white coat." },
 ];
 
 export const FAQS = [
