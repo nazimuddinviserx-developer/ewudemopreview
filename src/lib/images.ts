@@ -38,12 +38,12 @@ import res1 from "@/assets/res-1.jpg";
 import res2 from "@/assets/res-2.jpg";
 import res3 from "@/assets/res-3.jpg";
 
-import hero2 from "@/assets/hero-2.png.asset.json";
-import hero3 from "@/assets/hero-3.png.asset.json";
-import hero4 from "@/assets/hero-4.png.asset.json";
-import hero5 from "@/assets/hero-5.png.asset.json";
-import hero6 from "@/assets/hero-6.png.asset.json";
-import hero7 from "@/assets/hero-7.png.asset.json";
+import hero2 from "@/assets/hero-fallback.jpg";
+import hero3 from "@/assets/about-campus-aerial.jpg";
+import hero4 from "@/assets/about-culture.jpg";
+import hero5 from "@/assets/about-grad.jpg";
+import hero6 from "@/assets/ach-1.jpg";
+import hero7 from "@/assets/fac-library.jpg";
 
 export const IMG: Record<string, string> = {
   "face-1": face1,
@@ -78,12 +78,12 @@ export const IMG: Record<string, string> = {
   "res-1": res1,
   "res-2": res2,
   "res-3": res3,
-  "hero-2": hero2.url,
-  "hero-3": hero3.url,
-  "hero-4": hero4.url,
-  "hero-5": hero5.url,
-  "hero-6": hero6.url,
-  "hero-7": hero7.url,
+  "hero-2": hero2,
+  "hero-3": hero3,
+  "hero-4": hero4,
+  "hero-5": hero5,
+  "hero-6": hero6,
+  "hero-7": hero7,
 };
 
 export function img(key: string): string {
