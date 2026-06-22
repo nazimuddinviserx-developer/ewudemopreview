@@ -1,12 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight, GraduationCap, BookOpen, Microscope, Trophy, Users, Building2,
-  Calendar, HelpCircle, Sparkles, MapPin, Award, FlaskConical, Quote, ArrowUpRight,
+  Calendar, HelpCircle, Sparkles, MapPin, Award, Quote, ArrowUpRight,
 } from "lucide-react";
 import * as React from "react";
 import { NewsTicker } from "@/components/site/NewsTicker";
 import { HeroSlider } from "@/components/site/HeroSlider";
-import { LoginShortcuts } from "@/components/site/LoginShortcuts";
+import { PortalsBar } from "@/components/site/PortalsBar";
+import { CountUp } from "@/components/site/CountUp";
+import { ShowreelPlayer } from "@/components/site/ShowreelPlayer";
+import { PartnersFloating } from "@/components/site/PartnersFloating";
 import {
   DEPARTMENTS, FACULTY, FACILITIES, SCHOLARSHIPS, CLUBS, CALENDAR, FAQS,
   ACHIEVEMENTS, ALUMNI, DEPT_IMG_KEYS,
@@ -30,7 +33,7 @@ function Home() {
   return (
     <div>
       <Hero />
-      <LoginShortcuts />
+      <PortalsBar />
       <NewsTicker />
       <AboutPreview />
       <Stats />
@@ -45,7 +48,7 @@ function Home() {
       <GalleryBlock />
       <AlumniBlock />
       <FAQBlock />
-      <ContactPreview />
+      <PartnersFloating />
     </div>
   );
 }
@@ -55,18 +58,14 @@ function Hero() {
     <section className="relative isolate overflow-hidden bg-primary-deep text-primary-foreground">
       <HeroSlider />
       <div className="absolute inset-0 hero-overlay" />
-      <div className="relative mx-auto flex max-w-7xl flex-col gap-8 px-6 py-24 md:py-36 lg:py-44">
+      <div className="relative mx-auto flex max-w-7xl flex-col gap-6 px-6 py-24 md:py-32 lg:py-40">
         <p className="inline-flex w-fit items-center gap-2 rounded-full border border-primary-foreground/30 bg-primary-foreground/10 px-3 py-1 text-xs font-medium backdrop-blur">
-          <Sparkles className="h-3 w-3 text-gold" /> Admission Spring 2027 is now open
+          <Sparkles className="h-3 w-3 text-gold" /> Spring 2027 admission open
         </p>
-        <h1 className="max-w-4xl text-4xl font-bold leading-[1.1] text-balance md:text-6xl lg:text-7xl">
-          Where Bangladesh's brightest minds are shaped for the world.
+        <h1 className="max-w-4xl text-4xl font-bold leading-[1.05] text-balance md:text-6xl lg:text-7xl">
+          Shaping Bangladesh's brightest minds for the world.
         </h1>
-        <p className="max-w-2xl text-base text-primary-foreground/85 md:text-lg text-pretty">
-          For nearly three decades, East West University has been a home for ambitious learners,
-          curious researchers and changemakers, right here in the heart of Dhaka.
-        </p>
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="flex flex-wrap items-center gap-3 pt-2">
           <Link to="/admission" className="inline-flex items-center gap-2 rounded-md bg-gold px-5 py-3 text-sm font-semibold text-gold-foreground transition-transform hover:scale-[1.02]">
             Apply for Admission <ArrowRight className="h-4 w-4" />
           </Link>
@@ -81,67 +80,56 @@ function Hero() {
 
 function AboutPreview() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-20">
-      <div className="grid items-center gap-12 lg:grid-cols-2">
+    <section className="mx-auto max-w-7xl px-6 pt-24 pb-16">
+      <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.15fr]">
         <div>
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-primary">About EWU</p>
+          <p className="mb-3 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-primary">
+            <Sparkles className="h-3.5 w-3.5 text-gold" /> Watch · 90 seconds
+          </p>
           <h2 className="font-serif text-3xl font-bold leading-tight md:text-4xl text-balance">
-            A premier private university, building Bangladesh's next generation of leaders since 1996.
+            See what a day at EWU really feels like.
           </h2>
           <p className="mt-5 text-base text-muted-foreground text-pretty">
-            EWU brings together rigorous academics, hands-on research and a culture of inclusion,
-            preparing graduates to lead industry, public service and social change across South Asia.
+            From early-morning labs to late-night rehearsals, our students live the EWU promise every single day.
+            Press play, or just keep scrolling, the showreel will play itself.
           </p>
-          <div className="mt-8 grid grid-cols-2 gap-6">
-            <Feature title="Our Mission" body="Deliver world-class education that empowers students to contribute meaningfully to Bangladesh and beyond." />
-            <Feature title="Our Vision" body="To be the most progressive, research-driven private university in South Asia." />
-          </div>
-          <Link to="/about" className="mt-8 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
-            Read our story <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
-        <div className="relative">
-          <div className="aspect-[4/5] overflow-hidden rounded-3xl border border-border shadow-brick">
-            <img src={img("hero-3")} alt="EWU students" className="h-full w-full object-cover" loading="lazy" />
-          </div>
-          <div className="absolute -bottom-6 -left-6 hidden rounded-2xl border border-border bg-card p-5 shadow-brick md:block">
-            <p className="font-serif text-3xl font-bold text-primary">29</p>
-            <p className="text-xs text-muted-foreground">Years of excellence</p>
-          </div>
-          <div className="absolute -top-6 -right-6 hidden rounded-2xl border border-border bg-card p-5 shadow-brick md:block">
-            <p className="font-serif text-3xl font-bold text-primary">12,000+</p>
-            <p className="text-xs text-muted-foreground">Students enrolled</p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link to="/about" className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary-deep">
+              Our story <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link to="/clubs" className="inline-flex items-center gap-2 rounded-md border border-border bg-background px-4 py-2 text-sm font-semibold hover:border-primary hover:text-primary">
+              Campus life
+            </Link>
           </div>
         </div>
+
+        <ShowreelPlayer videoId="LlCwHnp3kL4" title="EWU Showreel" />
       </div>
     </section>
   );
 }
 
-function Feature({ title, body }: { title: string; body: string }) {
-  return (
-    <div className="border-l-2 border-primary pl-4">
-      <h3 className="font-semibold text-foreground">{title}</h3>
-      <p className="mt-1 text-sm text-muted-foreground">{body}</p>
-    </div>
-  );
-}
-
 const STATS = [
-  { v: "12,400+", l: "Students", i: GraduationCap },
-  { v: "30+", l: "Programs", i: BookOpen },
-  { v: "320+", l: "Faculty", i: Users },
-  { v: "180+", l: "Industry partners", i: Building2 },
+  { value: 12400, suffix: "+", label: "Students", icon: GraduationCap },
+  { value: 30, suffix: "+", label: "Programs", icon: BookOpen },
+  { value: 320, suffix: "+", label: "Faculty", icon: Users },
+  { value: 180, suffix: "+", label: "Industry partners", icon: Building2 },
 ];
 function Stats() {
   return (
-    <section className="border-y border-border bg-primary-soft/40">
-      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-6 py-12 md:grid-cols-4">
+    <section className="border-y border-border bg-card">
+      <div className="mx-auto grid max-w-6xl grid-cols-2 gap-4 px-6 py-8 md:grid-cols-4">
         {STATS.map((s) => (
-          <div key={s.l} className="text-center">
-            <s.i className="mx-auto mb-2 h-6 w-6 text-primary" />
-            <p className="font-serif text-3xl font-bold text-foreground md:text-4xl">{s.v}</p>
-            <p className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">{s.l}</p>
+          <div key={s.label} className="flex items-center gap-3 rounded-xl px-3 py-2">
+            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-primary-soft text-primary">
+              <s.icon className="h-5 w-5" />
+            </span>
+            <div className="min-w-0">
+              <p className="font-serif text-2xl font-bold leading-none text-foreground md:text-3xl">
+                <CountUp end={s.value} suffix={s.suffix} />
+              </p>
+              <p className="mt-1 text-[11px] uppercase tracking-wider text-muted-foreground">{s.label}</p>
+            </div>
           </div>
         ))}
       </div>
@@ -198,15 +186,21 @@ function FeaturedDepartments() {
 
 function ScholarshipsBlock() {
   return (
-    <section className="bg-card border-y border-border">
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-[1fr_1.2fr]">
+    <section className="relative overflow-hidden border-y border-border bg-card">
+      {/* Low-opacity left-side visual */}
+      <div aria-hidden className="pointer-events-none absolute inset-y-0 left-0 hidden w-1/2 lg:block">
+        <img src={img("hero-5")} alt="" className="h-full w-full object-cover opacity-15" loading="lazy" />
+        <div className="absolute inset-0 bg-gradient-to-r from-card/40 via-card/70 to-card" />
+      </div>
+
+      <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-[1fr_1.2fr]">
         <div>
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-primary">Scholarships</p>
           <h2 className="font-serif text-3xl font-bold leading-tight md:text-4xl text-balance">
             Talent shouldn't depend on tuition.
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Over <strong className="text-foreground">42% of EWU students</strong> receive some form of financial assistance: merit, need-based, sports or quota waivers.
+            Over <strong className="text-foreground">42% of EWU students</strong> receive some form of financial assistance, merit, need-based, sports or quota waivers.
           </p>
           <Link to="/admission" className="mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary-deep">
             Scholarship details <ArrowRight className="h-4 w-4" />
@@ -265,16 +259,22 @@ function ResearchHighlights() {
     { tag: "Energy", title: "Solar Mini-Grid Resilience for Coastal Bangladesh", lead: "Dr. Kazi Mahbubul Alam, EEE", img: "res-2" },
     { tag: "Economics", title: "Microfinance & Female Labor Force Participation", lead: "Dr. Rumana Akter, Economics", img: "res-3" },
   ];
+  const stats = [
+    { value: 1820, suffix: "+", label: "Publications" },
+    { value: 32, suffix: "", label: "Research groups" },
+    { value: 14, suffix: "", label: "Funded labs" },
+    { value: 18, prefix: "৳", suffix: " Cr", label: "2025 funding" },
+  ];
   return (
     <section className="brand-gradient text-primary-foreground">
-      <div className="mx-auto max-w-7xl px-6 py-20">
-        <div className="grid items-end gap-6 md:grid-cols-[1fr_auto]">
+      <div className="mx-auto max-w-7xl px-6 py-28">
+        <div className="grid items-end gap-8 md:grid-cols-[1fr_auto]">
           <div>
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-gold">Research</p>
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-gold">Research</p>
             <h2 className="font-serif text-3xl font-bold leading-tight md:text-4xl text-balance">
               Research with real-world impact, built for Bangladesh.
             </h2>
-            <p className="mt-4 max-w-xl text-primary-foreground/80">
+            <p className="mt-5 max-w-xl text-primary-foreground/80">
               EWU researchers publish in top international venues and partner with national institutions to solve problems that matter at home, from rural healthcare to climate resilience.
             </p>
           </div>
@@ -282,7 +282,8 @@ function ResearchHighlights() {
             Research portal <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
+
+        <div className="mt-14 grid gap-8 md:grid-cols-3">
           {projects.map((p) => (
             <div key={p.title} className="group overflow-hidden rounded-2xl border border-primary-foreground/15 bg-primary-foreground/5 backdrop-blur transition-all hover:-translate-y-1">
               <div className="relative aspect-[16/10] overflow-hidden">
@@ -300,16 +301,13 @@ function ResearchHighlights() {
           ))}
         </div>
 
-        <div className="mt-12 grid gap-4 rounded-2xl border border-primary-foreground/15 bg-primary-foreground/5 p-6 sm:grid-cols-4 backdrop-blur">
-          {[
-            { n: "1,820+", l: "Publications" },
-            { n: "32", l: "Research groups" },
-            { n: "14", l: "Funded labs" },
-            { n: "BDT 18Cr", l: "2025 funding" },
-          ].map((s) => (
-            <div key={s.l} className="text-center">
-              <p className="font-serif text-2xl font-bold text-gold md:text-3xl">{s.n}</p>
-              <p className="mt-1 text-[10px] uppercase tracking-wider text-primary-foreground/70">{s.l}</p>
+        <div className="mt-16 grid gap-6 rounded-2xl border border-primary-foreground/15 bg-primary-foreground/5 px-6 py-10 sm:grid-cols-4 backdrop-blur">
+          {stats.map((s) => (
+            <div key={s.label} className="text-center">
+              <p className="font-serif text-3xl font-bold text-gold md:text-4xl">
+                <CountUp end={s.value} prefix={s.prefix} suffix={s.suffix} />
+              </p>
+              <p className="mt-2 text-[11px] uppercase tracking-wider text-primary-foreground/70">{s.label}</p>
             </div>
           ))}
         </div>
@@ -365,7 +363,7 @@ function ClubsBlock() {
   return (
     <section className="bg-card border-y border-border">
       <div className="mx-auto max-w-7xl px-6 py-20">
-        <SectionHead eyebrow="Student Life" title="Find your people. Build your story." subtitle="40+ clubs and societies, academic, cultural, sports and community service." />
+        <SectionHead eyebrow="Club Activities" title="Find your people. Build your story." subtitle="40+ clubs and societies, academic, cultural, sports and community service." />
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {CLUBS.slice(0, 4).map((c) => (
             <Link key={c.slug} to="/clubs" className="group overflow-hidden rounded-2xl border border-border bg-background transition-all hover:-translate-y-1 hover:border-primary hover:shadow-brick">
@@ -392,14 +390,8 @@ function ClubsBlock() {
 function CalendarPreview() {
   return (
     <section className="relative isolate overflow-hidden">
-      {/* Visual calendar background */}
       <div className="absolute inset-0 -z-10">
-        <img
-          src={img("calendar-bg")}
-          alt=""
-          className="h-full w-full object-cover"
-          loading="lazy"
-        />
+        <img src={img("calendar-bg")} alt="" className="h-full w-full object-cover" loading="lazy" />
         <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/95" />
       </div>
 
@@ -413,7 +405,7 @@ function CalendarPreview() {
               Plan your semester. Every date that matters at EWU.
             </h2>
             <p className="mt-4 text-muted-foreground">
-              From class start dates to convocation, exams, holidays and registration windows. Everything you need to stay on track.
+              From class start dates to convocation, exams, holidays and registration windows.
             </p>
             <Link to="/academic-calendar" className="mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary-deep">
               Full academic calendar <ArrowRight className="h-4 w-4" />
@@ -521,7 +513,7 @@ function AlumniBlock() {
       />
       <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {ALUMNI.map((a) => (
-          <div key={a.name} className="group overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:border-primary hover:shadow-brick">
+          <div key={a.name} className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:border-primary hover:shadow-brick">
             <div className="relative aspect-[4/5] overflow-hidden">
               <img src={img(a.img)} alt={a.name} className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
@@ -532,8 +524,11 @@ function AlumniBlock() {
                 <p className="text-xs text-white/90">{a.role}</p>
               </div>
             </div>
-            <div className="p-5">
-              <p className="text-sm text-muted-foreground">{a.body}</p>
+            <div className="flex flex-1 flex-col gap-4 p-5">
+              <blockquote className="relative border-l-2 border-gold pl-3 text-sm italic text-foreground/85">
+                "{a.quote}"
+              </blockquote>
+              <p className="mt-auto text-xs text-muted-foreground">{a.body}</p>
             </div>
           </div>
         ))}
@@ -573,31 +568,6 @@ function FAQItem({ q, a }: { q: string; a: string }) {
       </button>
       {open && <p className="px-5 pb-5 pl-13 text-sm text-muted-foreground">{a}</p>}
     </div>
-  );
-}
-
-function ContactPreview() {
-  return (
-    <section className="mx-auto max-w-7xl px-6 py-20">
-      <div className="brand-gradient relative overflow-hidden rounded-3xl px-8 py-16 text-primary-foreground md:px-16">
-        <div className="grid items-center gap-8 md:grid-cols-[1fr_auto]">
-          <div>
-            <h2 className="font-serif text-3xl font-bold leading-tight md:text-4xl text-balance">
-              Ready to take the next step?
-            </h2>
-            <p className="mt-3 max-w-xl text-primary-foreground/85">
-              Visit our Aftabnagar campus, talk to an admission counsellor, or apply online today.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Link to="/admission" className="rounded-md bg-gold px-5 py-3 text-sm font-semibold text-gold-foreground">Apply now</Link>
-              <Link to="/contact" className="inline-flex items-center gap-2 rounded-md border border-primary-foreground/30 bg-primary-foreground/10 px-5 py-3 text-sm font-semibold backdrop-blur hover:bg-primary-foreground/20">
-                <MapPin className="h-4 w-4" /> Visit us
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   );
 }
 
