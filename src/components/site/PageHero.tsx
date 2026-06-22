@@ -25,10 +25,10 @@ export function PageHero({
             src={image}
             alt={imageAlt ?? ""}
             aria-hidden={!imageAlt}
-            className="absolute inset-0 h-full w-full object-cover opacity-30"
+            className="absolute inset-0 h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/55" />
-          <div className="absolute inset-0 bg-gradient-to-t from-primary-deep/60 via-transparent to-transparent" />
+          <div className="absolute inset-0 hero-overlay" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary-deep/70 via-primary-deep/30 to-transparent" />
         </>
       ) : (
         <>
