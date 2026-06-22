@@ -9,38 +9,285 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ResearchRouteImport } from './routes/research'
+import { Route as FacultyRouteImport } from './routes/faculty'
+import { Route as FacilitiesRouteImport } from './routes/facilities'
+import { Route as DepartmentsRouteImport } from './routes/departments'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ClubsRouteImport } from './routes/clubs'
+import { Route as AdmissionRouteImport } from './routes/admission'
+import { Route as AcademicCalendarRouteImport } from './routes/academic-calendar'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LoginStudentRouteImport } from './routes/login.student'
+import { Route as LoginNtsRouteImport } from './routes/login.nts'
+import { Route as LoginFacultyRouteImport } from './routes/login.faculty'
+import { Route as FacultyIdRouteImport } from './routes/faculty.$id'
+import { Route as DepartmentsSlugRouteImport } from './routes/departments.$slug'
 
+const ResearchRoute = ResearchRouteImport.update({
+  id: '/research',
+  path: '/research',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FacultyRoute = FacultyRouteImport.update({
+  id: '/faculty',
+  path: '/faculty',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FacilitiesRoute = FacilitiesRouteImport.update({
+  id: '/facilities',
+  path: '/facilities',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DepartmentsRoute = DepartmentsRouteImport.update({
+  id: '/departments',
+  path: '/departments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ClubsRoute = ClubsRouteImport.update({
+  id: '/clubs',
+  path: '/clubs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdmissionRoute = AdmissionRouteImport.update({
+  id: '/admission',
+  path: '/admission',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademicCalendarRoute = AcademicCalendarRouteImport.update({
+  id: '/academic-calendar',
+  path: '/academic-calendar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LoginStudentRoute = LoginStudentRouteImport.update({
+  id: '/login/student',
+  path: '/login/student',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginNtsRoute = LoginNtsRouteImport.update({
+  id: '/login/nts',
+  path: '/login/nts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginFacultyRoute = LoginFacultyRouteImport.update({
+  id: '/login/faculty',
+  path: '/login/faculty',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FacultyIdRoute = FacultyIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => FacultyRoute,
+} as any)
+const DepartmentsSlugRoute = DepartmentsSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => DepartmentsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/academic-calendar': typeof AcademicCalendarRoute
+  '/admission': typeof AdmissionRoute
+  '/clubs': typeof ClubsRoute
+  '/contact': typeof ContactRoute
+  '/departments': typeof DepartmentsRouteWithChildren
+  '/facilities': typeof FacilitiesRoute
+  '/faculty': typeof FacultyRouteWithChildren
+  '/research': typeof ResearchRoute
+  '/departments/$slug': typeof DepartmentsSlugRoute
+  '/faculty/$id': typeof FacultyIdRoute
+  '/login/faculty': typeof LoginFacultyRoute
+  '/login/nts': typeof LoginNtsRoute
+  '/login/student': typeof LoginStudentRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/academic-calendar': typeof AcademicCalendarRoute
+  '/admission': typeof AdmissionRoute
+  '/clubs': typeof ClubsRoute
+  '/contact': typeof ContactRoute
+  '/departments': typeof DepartmentsRouteWithChildren
+  '/facilities': typeof FacilitiesRoute
+  '/faculty': typeof FacultyRouteWithChildren
+  '/research': typeof ResearchRoute
+  '/departments/$slug': typeof DepartmentsSlugRoute
+  '/faculty/$id': typeof FacultyIdRoute
+  '/login/faculty': typeof LoginFacultyRoute
+  '/login/nts': typeof LoginNtsRoute
+  '/login/student': typeof LoginStudentRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/academic-calendar': typeof AcademicCalendarRoute
+  '/admission': typeof AdmissionRoute
+  '/clubs': typeof ClubsRoute
+  '/contact': typeof ContactRoute
+  '/departments': typeof DepartmentsRouteWithChildren
+  '/facilities': typeof FacilitiesRoute
+  '/faculty': typeof FacultyRouteWithChildren
+  '/research': typeof ResearchRoute
+  '/departments/$slug': typeof DepartmentsSlugRoute
+  '/faculty/$id': typeof FacultyIdRoute
+  '/login/faculty': typeof LoginFacultyRoute
+  '/login/nts': typeof LoginNtsRoute
+  '/login/student': typeof LoginStudentRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/academic-calendar'
+    | '/admission'
+    | '/clubs'
+    | '/contact'
+    | '/departments'
+    | '/facilities'
+    | '/faculty'
+    | '/research'
+    | '/departments/$slug'
+    | '/faculty/$id'
+    | '/login/faculty'
+    | '/login/nts'
+    | '/login/student'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/academic-calendar'
+    | '/admission'
+    | '/clubs'
+    | '/contact'
+    | '/departments'
+    | '/facilities'
+    | '/faculty'
+    | '/research'
+    | '/departments/$slug'
+    | '/faculty/$id'
+    | '/login/faculty'
+    | '/login/nts'
+    | '/login/student'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/academic-calendar'
+    | '/admission'
+    | '/clubs'
+    | '/contact'
+    | '/departments'
+    | '/facilities'
+    | '/faculty'
+    | '/research'
+    | '/departments/$slug'
+    | '/faculty/$id'
+    | '/login/faculty'
+    | '/login/nts'
+    | '/login/student'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AcademicCalendarRoute: typeof AcademicCalendarRoute
+  AdmissionRoute: typeof AdmissionRoute
+  ClubsRoute: typeof ClubsRoute
+  ContactRoute: typeof ContactRoute
+  DepartmentsRoute: typeof DepartmentsRouteWithChildren
+  FacilitiesRoute: typeof FacilitiesRoute
+  FacultyRoute: typeof FacultyRouteWithChildren
+  ResearchRoute: typeof ResearchRoute
+  LoginFacultyRoute: typeof LoginFacultyRoute
+  LoginNtsRoute: typeof LoginNtsRoute
+  LoginStudentRoute: typeof LoginStudentRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/research': {
+      id: '/research'
+      path: '/research'
+      fullPath: '/research'
+      preLoaderRoute: typeof ResearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faculty': {
+      id: '/faculty'
+      path: '/faculty'
+      fullPath: '/faculty'
+      preLoaderRoute: typeof FacultyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/facilities': {
+      id: '/facilities'
+      path: '/facilities'
+      fullPath: '/facilities'
+      preLoaderRoute: typeof FacilitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/departments': {
+      id: '/departments'
+      path: '/departments'
+      fullPath: '/departments'
+      preLoaderRoute: typeof DepartmentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/clubs': {
+      id: '/clubs'
+      path: '/clubs'
+      fullPath: '/clubs'
+      preLoaderRoute: typeof ClubsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admission': {
+      id: '/admission'
+      path: '/admission'
+      fullPath: '/admission'
+      preLoaderRoute: typeof AdmissionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academic-calendar': {
+      id: '/academic-calendar'
+      path: '/academic-calendar'
+      fullPath: '/academic-calendar'
+      preLoaderRoute: typeof AcademicCalendarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +295,82 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/login/student': {
+      id: '/login/student'
+      path: '/login/student'
+      fullPath: '/login/student'
+      preLoaderRoute: typeof LoginStudentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login/nts': {
+      id: '/login/nts'
+      path: '/login/nts'
+      fullPath: '/login/nts'
+      preLoaderRoute: typeof LoginNtsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login/faculty': {
+      id: '/login/faculty'
+      path: '/login/faculty'
+      fullPath: '/login/faculty'
+      preLoaderRoute: typeof LoginFacultyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faculty/$id': {
+      id: '/faculty/$id'
+      path: '/$id'
+      fullPath: '/faculty/$id'
+      preLoaderRoute: typeof FacultyIdRouteImport
+      parentRoute: typeof FacultyRoute
+    }
+    '/departments/$slug': {
+      id: '/departments/$slug'
+      path: '/$slug'
+      fullPath: '/departments/$slug'
+      preLoaderRoute: typeof DepartmentsSlugRouteImport
+      parentRoute: typeof DepartmentsRoute
+    }
   }
 }
 
+interface DepartmentsRouteChildren {
+  DepartmentsSlugRoute: typeof DepartmentsSlugRoute
+}
+
+const DepartmentsRouteChildren: DepartmentsRouteChildren = {
+  DepartmentsSlugRoute: DepartmentsSlugRoute,
+}
+
+const DepartmentsRouteWithChildren = DepartmentsRoute._addFileChildren(
+  DepartmentsRouteChildren,
+)
+
+interface FacultyRouteChildren {
+  FacultyIdRoute: typeof FacultyIdRoute
+}
+
+const FacultyRouteChildren: FacultyRouteChildren = {
+  FacultyIdRoute: FacultyIdRoute,
+}
+
+const FacultyRouteWithChildren =
+  FacultyRoute._addFileChildren(FacultyRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AcademicCalendarRoute: AcademicCalendarRoute,
+  AdmissionRoute: AdmissionRoute,
+  ClubsRoute: ClubsRoute,
+  ContactRoute: ContactRoute,
+  DepartmentsRoute: DepartmentsRouteWithChildren,
+  FacilitiesRoute: FacilitiesRoute,
+  FacultyRoute: FacultyRouteWithChildren,
+  ResearchRoute: ResearchRoute,
+  LoginFacultyRoute: LoginFacultyRoute,
+  LoginNtsRoute: LoginNtsRoute,
+  LoginStudentRoute: LoginStudentRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
