@@ -19,11 +19,11 @@ export function Footer() {
                 { i: Youtube, h: SITE.socials.youtube, label: "YouTube" },
                 { i: Twitter, h: SITE.socials.twitter, label: "Twitter" },
                 { i: Linkedin, h: SITE.socials.linkedin, label: "LinkedIn" },
-            ].map(({ i: Icon, h }, idx) => (
+            ].map(({ i: Icon, h, label }, idx) => (
               <a
                 key={idx}
                 href={h}
-                  aria-label={`East West University on ${label}`}
+                aria-label={`East West University on ${label}`}
                 className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border bg-background text-foreground/75 transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground"
               >
                 <Icon className="h-4 w-4" />
