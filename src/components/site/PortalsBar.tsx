@@ -5,8 +5,8 @@ const ITEMS = [
   { to: "/login/student" as const, label: "Student Portal", icon: GraduationCap, external: false },
   { to: "/login/faculty" as const, label: "Faculty Portal", icon: User, external: false },
   { to: "/login/nts" as const, label: "NTS Portal", icon: Briefcase, external: false },
-  { to: "/" as const, label: "Notice", icon: Bell, external: true, href: "#notice" },
-  { to: "/" as const, label: "Results", icon: FileBarChart, external: true, href: "#results" },
+  { to: "/academic-calendar" as const, label: "Notice", icon: Bell, external: false },
+  { to: "/faculty" as const, label: "Results", icon: FileBarChart, external: false },
   { to: "/admission" as const, label: "Apply", icon: Send, external: false, highlight: true },
 ];
 
@@ -28,11 +28,7 @@ export function PortalsBar() {
             );
             return (
               <li key={it.label}>
-                {it.external ? (
-                  <a href={it.href} className={cls}>{inner}</a>
-                ) : (
-                  <Link to={it.to} className={cls}>{inner}</Link>
-                )}
+                <Link to={it.to} className={cls}>{inner}</Link>
               </li>
             );
           })}

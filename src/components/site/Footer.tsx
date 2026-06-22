@@ -13,16 +13,17 @@ export function Footer() {
             East West University, a leading private university in Bangladesh, building tomorrow's leaders since 1996.
           </p>
           <div className="mt-5 flex items-center gap-2">
-            {[
-              { i: Facebook, h: SITE.socials.facebook },
-              { i: Instagram, h: SITE.socials.instagram },
-              { i: Youtube, h: SITE.socials.youtube },
-              { i: Twitter, h: SITE.socials.twitter },
-              { i: Linkedin, h: SITE.socials.linkedin },
+              {[
+                { i: Facebook, h: SITE.socials.facebook, label: "Facebook" },
+                { i: Instagram, h: SITE.socials.instagram, label: "Instagram" },
+                { i: Youtube, h: SITE.socials.youtube, label: "YouTube" },
+                { i: Twitter, h: SITE.socials.twitter, label: "Twitter" },
+                { i: Linkedin, h: SITE.socials.linkedin, label: "LinkedIn" },
             ].map(({ i: Icon, h }, idx) => (
               <a
                 key={idx}
                 href={h}
+                  aria-label={`East West University on ${label}`}
                 className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border bg-background text-foreground/75 transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground"
               >
                 <Icon className="h-4 w-4" />
