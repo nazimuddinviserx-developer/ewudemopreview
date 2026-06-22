@@ -84,8 +84,12 @@ export function Header() {
             className="relative"
             onMouseEnter={() => setOthersOpen(true)}
             onMouseLeave={() => setOthersOpen(false)}
+            onFocus={() => setOthersOpen(true)}
+            onBlur={(event) => {
+              if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setOthersOpen(false);
+            }}
           >
-            <button className="inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-accent hover:text-accent-foreground">
+            <button aria-haspopup="menu" aria-expanded={othersOpen} className="inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-accent hover:text-accent-foreground">
               Others <ChevronDown className="h-4 w-4" />
             </button>
             {othersOpen && (
@@ -110,8 +114,12 @@ export function Header() {
             className="relative"
             onMouseEnter={() => setLoginOpen(true)}
             onMouseLeave={() => setLoginOpen(false)}
+            onFocus={() => setLoginOpen(true)}
+            onBlur={(event) => {
+              if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setLoginOpen(false);
+            }}
           >
-            <button className="inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-accent hover:text-accent-foreground">
+            <button aria-haspopup="menu" aria-expanded={loginOpen} className="inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-accent hover:text-accent-foreground">
               <LogIn className="h-4 w-4" /> Login <ChevronDown className="h-4 w-4" />
             </button>
             {loginOpen && (

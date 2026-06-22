@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight, GraduationCap, BookOpen, Microscope, Trophy, Users, Building2,
   Calendar, HelpCircle, Sparkles, Award, Quote, ArrowUpRight,
+  Monitor, FlaskConical, Mic2, Utensils, HeartPulse, Bus,
 } from "lucide-react";
 import * as React from "react";
 import { NewsTicker } from "@/components/site/NewsTicker";
@@ -15,7 +16,17 @@ import {
   ACHIEVEMENTS, ALUMNI, DEPT_IMG_KEYS,
 } from "@/lib/site-data";
 import { img, GALLERY_KEYS } from "@/lib/images";
-import * as Icons from "lucide-react";
+
+const FACILITY_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+  BookOpen,
+  Monitor,
+  FlaskConical,
+  Mic2,
+  Utensils,
+  Trophy,
+  HeartPulse,
+  Bus,
+};
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -226,7 +237,7 @@ function FacilitiesBlock() {
       <SectionHead eyebrow="Facilities" title="A campus designed for learning, living and building." />
       <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {featured.map((f) => {
-          const Icon = (Icons as any)[f.icon] ?? Building2;
+          const Icon = FACILITY_ICONS[f.icon] ?? Building2;
           return (
             <div key={f.name} className="group overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:border-primary hover:shadow-brick">
               <div className="relative aspect-[16/10] overflow-hidden">

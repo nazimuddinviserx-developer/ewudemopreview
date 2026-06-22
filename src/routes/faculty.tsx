@@ -43,11 +43,12 @@ function FacultyDirectory() {
             <input
               value={q}
               onChange={(e) => setQ(e.target.value)}
+              aria-label="Search faculty or research"
               placeholder="Search faculty or research…"
               className="w-full rounded-md border border-input bg-background py-2.5 pl-10 pr-3 text-sm outline-none focus:border-primary"
             />
           </div>
-          <select value={dept} onChange={(e) => setDept(e.target.value)} className="rounded-md border border-input bg-background px-3 py-2.5 text-sm outline-none focus:border-primary">
+          <select value={dept} onChange={(e) => setDept(e.target.value)} aria-label="Filter by department" className="rounded-md border border-input bg-background px-3 py-2.5 text-sm outline-none focus:border-primary">
             <option value="all">All departments</option>
             {DEPARTMENTS.map((d) => <option key={d.slug} value={d.slug}>{d.name}</option>)}
           </select>

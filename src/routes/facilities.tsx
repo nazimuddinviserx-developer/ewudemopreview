@@ -305,7 +305,7 @@ function FacilitiesPage() {
             <img src={img("fac-library")} alt="Virtual tour preview" className="absolute inset-0 h-full w-full object-cover opacity-50" loading="lazy" />
             <div className="absolute inset-0 bg-gradient-to-t from-primary-deep/80 via-primary/40 to-transparent" />
             <div className="relative flex h-full flex-col items-center justify-center text-center text-primary-foreground">
-              <button className="group grid h-20 w-20 place-items-center rounded-full bg-gold text-gold-foreground shadow-brick transition hover:scale-110">
+              <button aria-label="Launch 360 degree campus walkthrough" className="group grid h-20 w-20 place-items-center rounded-full bg-gold text-gold-foreground shadow-brick transition hover:scale-110">
                 <PlayCircle className="h-10 w-10" />
               </button>
               <p className="mt-4 font-serif text-xl font-bold">Launch 360° campus walkthrough</p>

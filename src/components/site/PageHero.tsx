@@ -46,7 +46,7 @@ export function PageHero({
 
       <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-20">
         {crumbs && (
-          <nav className="mb-4 flex flex-wrap items-center gap-1 text-xs text-primary-foreground/80">
+          <nav aria-label="Breadcrumb" className="mb-4 flex flex-wrap items-center gap-1 text-xs text-primary-foreground/80">
             {crumbs.map((c, i) => (
               <span key={i} className="inline-flex items-center gap-1">
                 {c.to ? <Link to={c.to} className="hover:text-primary-foreground">{c.label}</Link> : <span>{c.label}</span>}

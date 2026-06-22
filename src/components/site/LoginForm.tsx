@@ -34,15 +34,15 @@ export function LoginForm({
             <span className="mb-1 block text-xs font-medium text-foreground/80">{idLabel}</span>
             <div className="flex items-center gap-2 rounded-md border border-input bg-background px-3 focus-within:border-primary">
               <User className="h-4 w-4 text-muted-foreground" />
-              <input required className="w-full bg-transparent py-2 text-sm outline-none" placeholder={idLabel.toLowerCase()} />
+              <input required aria-label={idLabel} className="w-full bg-transparent py-2 text-sm outline-none" placeholder={idLabel.toLowerCase()} />
             </div>
           </label>
           <label className="block">
             <span className="mb-1 block text-xs font-medium text-foreground/80">Password</span>
             <div className="flex items-center gap-2 rounded-md border border-input bg-background px-3 focus-within:border-primary">
               <Lock className="h-4 w-4 text-muted-foreground" />
-              <input required type={show ? "text" : "password"} className="w-full bg-transparent py-2 text-sm outline-none" placeholder="••••••••" />
-              <button type="button" onClick={() => setShow((s) => !s)} className="text-muted-foreground hover:text-foreground">
+              <input required type={show ? "text" : "password"} aria-label="Password" className="w-full bg-transparent py-2 text-sm outline-none" placeholder="••••••••" />
+              <button type="button" aria-label={show ? "Hide password" : "Show password"} onClick={() => setShow((s) => !s)} className="text-muted-foreground hover:text-foreground">
                 {show ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
               </button>
             </div>
@@ -51,7 +51,7 @@ export function LoginForm({
             <label className="inline-flex items-center gap-2 text-foreground/70">
               <input type="checkbox" className="accent-primary" /> Remember me
             </label>
-            <a href="#" className="font-medium text-primary hover:underline">Forgot password?</a>
+            <Link to="/contact" className="font-medium text-primary hover:underline">Forgot password?</Link>
           </div>
           <button type="submit" className="w-full rounded-md bg-primary py-2 text-sm font-semibold text-primary-foreground hover:bg-primary-deep">
             Sign in

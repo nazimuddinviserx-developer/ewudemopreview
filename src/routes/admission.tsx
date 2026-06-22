@@ -282,14 +282,14 @@ function AdmissionPage() {
             <p className="mt-3 text-xs text-muted-foreground">Indicative, actual fees depend on credit load.</p>
           </div>
 
-          <a id="apply-cta" className="block rounded-2xl brand-gradient p-6 text-primary-foreground shadow-brick">
+          <div id="apply-cta" className="block rounded-2xl brand-gradient p-6 text-primary-foreground shadow-brick">
             <FileText className="h-6 w-6 text-gold" />
             <h3 className="mt-3 font-serif text-lg font-bold">Apply now</h3>
             <p className="mt-2 text-sm text-primary-foreground/85">Start your online application in under 10 minutes.</p>
-            <button className="mt-4 inline-flex items-center gap-2 rounded-md bg-gold px-4 py-2 text-sm font-semibold text-gold-foreground">
+            <Link to="/login/student" className="mt-4 inline-flex items-center gap-2 rounded-md bg-gold px-4 py-2 text-sm font-semibold text-gold-foreground">
               Begin application <ArrowRight className="h-4 w-4" />
-            </button>
-          </a>
+            </Link>
+          </div>
         </aside>
       </section>
 
@@ -314,9 +314,9 @@ function AdmissionPage() {
                 </span>
                 <h3 className="mt-4 font-serif text-lg font-bold">{it.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{it.body}</p>
-                <a className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
+                <Link to="/contact" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
                   {it.link} <ArrowRight className="h-4 w-4" />
-                </a>
+                </Link>
               </div>
             ))}
           </div>

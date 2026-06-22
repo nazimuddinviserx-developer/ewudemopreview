@@ -65,7 +65,7 @@ export function FloatingChatbot() {
                 <p className="text-[10px] opacity-80">AI Admission & Campus Helper</p>
               </div>
             </div>
-            <button onClick={() => setOpen(false)} className="rounded p-1 hover:bg-primary-foreground/15">
+            <button aria-label="Close EWU Assist" onClick={() => setOpen(false)} className="rounded p-1 hover:bg-primary-foreground/15">
               <X className="h-4 w-4" />
             </button>
           </div>
@@ -100,10 +100,11 @@ export function FloatingChatbot() {
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
+              aria-label="Message for EWU Assist"
               placeholder="Ask anything…"
               className="flex-1 rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary"
             />
-            <button type="submit" className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-primary text-primary-foreground hover:bg-primary-deep">
+            <button type="submit" aria-label="Send message" className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-primary text-primary-foreground hover:bg-primary-deep">
               <Send className="h-4 w-4" />
             </button>
           </form>

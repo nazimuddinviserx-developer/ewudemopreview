@@ -140,9 +140,9 @@ function ResearchPage() {
               </div>
               <h3 className="mt-4 font-serif text-lg font-bold">{t.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{t.body}</p>
-              <a className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
+              <Link to="/faculty" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
                 Explore <ArrowRight className="h-4 w-4" />
-              </a>
+              </Link>
             </div>
           ))}
         </div>
@@ -283,6 +283,7 @@ function ResearchPage() {
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
+            aria-label="Search principal investigators"
             placeholder="Try 'Bangla NLP', 'microfinance' or 'pharmacology'"
             className="flex-1 bg-transparent px-2 py-2 text-sm outline-none"
           />
@@ -327,9 +328,9 @@ function ResearchPage() {
               <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-primary">News & Events</p>
               <h2 className="font-serif text-3xl font-bold md:text-4xl">What's happening in research</h2>
             </div>
-            <a className="inline-flex items-center gap-2 text-sm font-semibold text-primary">
+            <Link to="/academic-calendar" className="inline-flex items-center gap-2 text-sm font-semibold text-primary">
               <Newspaper className="h-4 w-4" /> All updates <ArrowRight className="h-4 w-4" />
-            </a>
+            </Link>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             {NEWS.map((n) => (

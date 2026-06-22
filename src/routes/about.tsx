@@ -302,11 +302,11 @@ function AboutPage() {
                     <p className="font-medium">{j.t}</p>
                     <p className="text-xs text-muted-foreground">{j.l}</p>
                   </div>
-                  <a href="#" className="text-sm font-bold text-primary hover:underline">Apply →</a>
+                  <Link to="/contact" className="text-sm font-bold text-primary hover:underline">Apply →</Link>
                 </div>
               ))}
             </div>
-            <a href="#" className="mt-6 inline-flex items-center rounded-md bg-primary px-5 py-2.5 text-sm font-bold text-primary-foreground hover:bg-primary-deep">View all openings</a>
+            <Link to="/contact" className="mt-6 inline-flex items-center rounded-md bg-primary px-5 py-2.5 text-sm font-bold text-primary-foreground hover:bg-primary-deep">View all openings</Link>
           </div>
           <div className="overflow-hidden rounded-2xl border border-border shadow-brick">
             <img src={grad} alt="EWU graduation" loading="lazy" className="aspect-[4/3] w-full object-cover" />
@@ -338,7 +338,7 @@ function AboutPage() {
                 <p className="mt-3 flex items-center gap-3 text-sm"><Mail className="h-4 w-4 text-primary" /> info@ewubd.edu</p>
                 <div className="mt-5 flex flex-wrap gap-2">
                   <Link to="/contact" className="rounded-md bg-primary px-4 py-2 text-sm font-bold text-primary-foreground hover:bg-primary-deep">Contact us</Link>
-                  <a href="#" className="rounded-md border border-border px-4 py-2 text-sm font-bold hover:bg-card">Virtual tour</a>
+                  <Link to="/facilities" className="rounded-md border border-border px-4 py-2 text-sm font-bold hover:bg-card">Virtual tour</Link>
                 </div>
               </div>
             </div>

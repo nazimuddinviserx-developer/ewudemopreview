@@ -36,6 +36,7 @@ function CalendarPage() {
             <button
               key={x}
               onClick={() => setT(x)}
+              aria-pressed={t === x}
               className={`rounded-full border px-4 py-1.5 text-xs font-semibold transition-colors ${
                 t === x ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card text-foreground/75 hover:border-primary"
               }`}

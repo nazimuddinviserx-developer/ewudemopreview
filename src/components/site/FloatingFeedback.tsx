@@ -32,14 +32,14 @@ export function FloatingFeedback() {
           >
             <div className="mb-4 flex items-center justify-between">
               <h3 className="font-serif text-lg font-bold">Share your feedback</h3>
-              <button type="button" onClick={() => setOpen(false)} className="rounded-md p-1 hover:bg-muted">
+              <button type="button" aria-label="Close feedback form" onClick={() => setOpen(false)} className="rounded-md p-1 hover:bg-muted">
                 <X className="h-4 w-4" />
               </button>
             </div>
             <div className="space-y-3">
-              <input required placeholder="Your name" className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary" />
-              <input required type="email" placeholder="Email" className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary" />
-              <select required className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary">
+              <input required aria-label="Your name" placeholder="Your name" className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary" />
+              <input required type="email" aria-label="Email" placeholder="Email" className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary" />
+              <select required aria-label="Feedback category" className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary">
                 <option value="">Select a category</option>
                 <option>Admission</option>
                 <option>Academic</option>
@@ -47,7 +47,7 @@ export function FloatingFeedback() {
                 <option>Website</option>
                 <option>Other</option>
               </select>
-              <textarea required rows={3} placeholder="Your message" className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary" />
+              <textarea required rows={3} aria-label="Your message" placeholder="Your message" className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary" />
               <div>
                 <p className="mb-1 text-xs font-medium text-muted-foreground">Rating (optional)</p>
                 <div className="flex gap-1">
