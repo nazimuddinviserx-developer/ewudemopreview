@@ -245,9 +245,9 @@ function ResearchPage() {
 
       {/* STUDENT OPPORTUNITIES */}
       <section className="relative overflow-hidden border-y border-border bg-primary">
-        <img src={img("hero-4")} alt="" aria-hidden className="absolute inset-0 h-full w-full object-cover opacity-25" loading="lazy" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/55" />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary-deep/60 via-transparent to-transparent" />
+        <img src={img("hero-4")} alt="" aria-hidden className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+        <div className="absolute inset-0 hero-overlay" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-deep/70 via-primary-deep/30 to-transparent" />
         <div className="relative mx-auto max-w-7xl px-6 py-16 text-primary-foreground">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-gold">Student Opportunities</p>
           <h2 className="font-serif text-3xl font-bold md:text-4xl">Join an active research project</h2>

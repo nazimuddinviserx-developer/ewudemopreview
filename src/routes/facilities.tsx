@@ -180,9 +180,9 @@ function FacilitiesPage() {
 
       {/* LIBRARY & LEARNING COMMONS */}
       <section className="relative overflow-hidden border-y border-border bg-primary">
-        <img src={img("fac-library")} alt="" aria-hidden className="absolute inset-0 h-full w-full object-cover opacity-30" loading="lazy" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/55" />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary-deep/60 via-transparent to-transparent" />
+        <img src={img("fac-library")} alt="" aria-hidden className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+        <div className="absolute inset-0 hero-overlay" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-deep/70 via-primary-deep/30 to-transparent" />
         <div className="relative mx-auto max-w-7xl px-6 py-16 text-primary-foreground">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-gold">Library & Learning Commons</p>
           <h2 className="font-serif text-3xl font-bold md:text-4xl">A library that never sleeps</h2>

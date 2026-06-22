@@ -138,9 +138,9 @@ function AdmissionPage() {
     <div>
       {/* HERO with image */}
       <section className="relative overflow-hidden border-b border-primary-deep/30 bg-primary text-primary-foreground">
-        <img src={heroAsset.url} alt="Student at EWU admission desk" className="absolute inset-0 h-full w-full object-cover opacity-30" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/55" />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary-deep/60 via-transparent to-transparent" />
+        <img src={heroAsset.url} alt="Student at EWU admission desk" className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 hero-overlay" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-deep/70 via-primary-deep/30 to-transparent" />
         <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-20 md:py-28 lg:grid-cols-[1.2fr_1fr] lg:items-center">
           <div>
             <nav className="mb-4 flex items-center gap-2 text-xs text-primary-foreground/70">
@@ -365,9 +365,9 @@ function AdmissionPage() {
 
       {/* VISIT OPTIONS */}
       <section id="visit" className="relative overflow-hidden border-y border-border bg-primary">
-        <img src={visitAsset.url} alt="EWU campus tour" className="absolute inset-0 h-full w-full object-cover opacity-30" loading="lazy" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/55" />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary-deep/60 via-transparent to-transparent" />
+        <img src={visitAsset.url} alt="EWU campus tour" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+        <div className="absolute inset-0 hero-overlay" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-deep/70 via-primary-deep/30 to-transparent" />
         <div className="relative mx-auto max-w-7xl px-6 py-16 text-primary-foreground">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-gold">Visit & Experience</p>
           <h2 className="font-serif text-3xl font-bold md:text-4xl">Come see EWU for yourself</h2>
