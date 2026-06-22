@@ -1,22 +1,23 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight, GraduationCap, BookOpen, Microscope, Trophy, Users, Building2,
-  Calendar, HelpCircle, Award, Sparkles, Quote, Play, MapPin,
+  Calendar, HelpCircle, Award, Sparkles, Quote, MapPin,
 } from "lucide-react";
 import * as React from "react";
-import heroVideo from "@/assets/hero-campus.mp4.asset.json";
 import heroFallback from "@/assets/hero-fallback.jpg";
 import { NewsTicker } from "@/components/site/NewsTicker";
+import { HeroSlider } from "@/components/site/HeroSlider";
+import { LoginShortcuts } from "@/components/site/LoginShortcuts";
 import { DEPARTMENTS, FACULTY, FACILITIES, SCHOLARSHIPS, CLUBS, CALENDAR, FAQS } from "@/lib/site-data";
 import * as Icons from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "East West University — Excellence in Education" },
+      { title: "East West University, Excellence in Education" },
       { name: "description", content: "EWU is a leading private university in Dhaka offering 30+ programs across Engineering, Business, Pharmacy, Law and Liberal Arts." },
       { property: "og:title", content: "East West University" },
-      { property: "og:description", content: "Excellence in Education — programs, admission, research and campus life in Dhaka, Bangladesh." },
+      { property: "og:description", content: "Excellence in Education. Programs, admission, research and campus life in Dhaka, Bangladesh." },
     ],
   }),
   component: Home,
@@ -26,6 +27,7 @@ function Home() {
   return (
     <div>
       <Hero />
+      <LoginShortcuts />
       <NewsTicker />
       <AboutPreview />
       <Stats />
@@ -46,27 +48,18 @@ function Home() {
 function Hero() {
   return (
     <section className="relative isolate overflow-hidden bg-primary-deep text-primary-foreground">
-      <video
-        className="absolute inset-0 h-full w-full object-cover"
-        autoPlay
-        muted
-        loop
-        playsInline
-        poster={heroFallback}
-      >
-        <source src={heroVideo.url} type="video/mp4" />
-      </video>
+      <HeroSlider />
       <div className="absolute inset-0 hero-overlay" />
       <div className="relative mx-auto flex max-w-7xl flex-col gap-8 px-6 py-24 md:py-36 lg:py-44">
         <p className="inline-flex w-fit items-center gap-2 rounded-full border border-primary-foreground/30 bg-primary-foreground/10 px-3 py-1 text-xs font-medium backdrop-blur">
           <Sparkles className="h-3 w-3 text-gold" /> Admission Spring 2027 is now open
         </p>
-        <h1 className="max-w-4xl font-serif text-4xl font-bold leading-[1.1] text-balance md:text-6xl lg:text-7xl">
+        <h1 className="max-w-4xl text-4xl font-bold leading-[1.1] text-balance md:text-6xl lg:text-7xl">
           Where Bangladesh's brightest minds are shaped for the world.
         </h1>
         <p className="max-w-2xl text-base text-primary-foreground/85 md:text-lg text-pretty">
           For nearly three decades, East West University has been a home for ambitious learners,
-          curious researchers and changemakers — right here in the heart of Dhaka.
+          curious researchers and changemakers, right here in the heart of Dhaka.
         </p>
         <div className="flex flex-wrap items-center gap-3">
           <Link to="/admission" className="inline-flex items-center gap-2 rounded-md bg-gold px-5 py-3 text-sm font-semibold text-gold-foreground transition-transform hover:scale-[1.02]">
@@ -75,12 +68,6 @@ function Hero() {
           <Link to="/departments" className="inline-flex items-center gap-2 rounded-md border border-primary-foreground/40 bg-primary-foreground/10 px-5 py-3 text-sm font-semibold backdrop-blur hover:bg-primary-foreground/20">
             Explore Programs
           </Link>
-          <button className="inline-flex items-center gap-2 rounded-md px-4 py-3 text-sm font-medium text-primary-foreground/90 hover:text-primary-foreground">
-            <span className="grid h-9 w-9 place-items-center rounded-full bg-primary-foreground/15">
-              <Play className="h-4 w-4 fill-current" />
-            </span>
-            Campus tour
-          </button>
         </div>
       </div>
     </section>
@@ -97,7 +84,7 @@ function AboutPreview() {
             A premier private university, building Bangladesh's next generation of leaders since 1996.
           </h2>
           <p className="mt-5 text-base text-muted-foreground text-pretty">
-            EWU brings together rigorous academics, hands-on research and a culture of inclusion —
+            EWU brings together rigorous academics, hands-on research and a culture of inclusion ,
             preparing graduates to lead industry, public service and social change across South Asia.
           </p>
           <div className="mt-8 grid grid-cols-2 gap-6">
@@ -196,7 +183,7 @@ function ScholarshipsBlock() {
             Talent shouldn't depend on tuition.
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Over <strong className="text-foreground">42% of EWU students</strong> receive some form of financial assistance — merit, need-based, sports or quota waivers.
+            Over <strong className="text-foreground">42% of EWU students</strong> receive some form of financial assistance , merit, need-based, sports or quota waivers.
           </p>
           <Link to="/admission" className="mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary-deep">
             Scholarship details <ArrowRight className="h-4 w-4" />
@@ -253,7 +240,7 @@ function ResearchHighlights() {
           <div>
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-gold">Research</p>
             <h2 className="font-serif text-3xl font-bold leading-tight md:text-4xl text-balance">
-              Research with real-world impact — built for Bangladesh.
+              Research with real-world impact , built for Bangladesh.
             </h2>
           </div>
           <Link to="/research" className="inline-flex items-center gap-1 rounded-md border border-primary-foreground/30 bg-primary-foreground/10 px-4 py-2 text-sm font-semibold backdrop-blur hover:bg-primary-foreground/20">
@@ -321,7 +308,7 @@ function ClubsBlock() {
   return (
     <section className="bg-card border-y border-border">
       <div className="mx-auto max-w-7xl px-6 py-20">
-        <SectionHead eyebrow="Student Life" title="Find your people. Build your story." subtitle="40+ clubs and societies — academic, cultural, sports and community service." />
+        <SectionHead eyebrow="Student Life" title="Find your people. Build your story." subtitle="40+ clubs and societies , academic, cultural, sports and community service." />
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {CLUBS.slice(0, 4).map((c) => (
             <Link key={c.slug} to="/clubs" className="group rounded-2xl border border-border bg-background p-5 transition-colors hover:border-primary">
@@ -374,7 +361,7 @@ function Testimonial() {
     <section className="mx-auto max-w-4xl px-6 py-20 text-center">
       <Quote className="mx-auto h-10 w-10 text-gold" />
       <p className="mt-6 font-serif text-2xl leading-snug text-foreground md:text-3xl text-balance">
-        "EWU gave me more than a degree — it gave me a network, a research lab, and the confidence to launch
+        "EWU gave me more than a degree. It gave me a network, a research lab, and the confidence to launch
         a fintech that now serves 200,000 users across Bangladesh."
       </p>
       <p className="mt-6 text-sm font-semibold">Tahmid Karim</p>

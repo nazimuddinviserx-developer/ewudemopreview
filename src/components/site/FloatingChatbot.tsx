@@ -9,7 +9,7 @@ const SUGGESTED = [
 ];
 
 const CANNED: Record<string, string> = {
-  admission: "Spring 2027 admission is open through 15 January. Apply via the Admission page — you'll need your SSC/HSC transcripts and a recent photo.",
+  admission: "Spring 2027 admission is open through 15 January. Apply via the Admission page , you'll need your SSC/HSC transcripts and a recent photo.",
   scholarship: "EWU offers Merit, Need-based, Sports, and Quota waivers. See the Admission > Scholarships section for eligibility.",
   cse: "The CSE department offers BSc, MSc and PhD with 48 faculty. Visit /departments/cse for details.",
   emergency: "Emergency hotline: +880 1755 587224. Medical Centre operates 24/7 on campus.",

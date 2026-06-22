@@ -7,9 +7,9 @@ import { Search } from "lucide-react";
 export const Route = createFileRoute("/faculty")({
   head: () => ({
     meta: [
-      { title: "Faculty Directory — East West University" },
-      { name: "description", content: "Browse EWU's faculty across all departments — research interests, publications and contact information." },
-      { property: "og:title", content: "Faculty Directory — EWU" },
+      { title: "Faculty Directory , East West University" },
+      { name: "description", content: "Browse EWU's faculty across all departments , research interests, publications and contact information." },
+      { property: "og:title", content: "Faculty Directory , EWU" },
       { property: "og:description", content: "Search EWU faculty across all departments." },
     ],
   }),

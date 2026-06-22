@@ -7,10 +7,10 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — East West University" },
-      { name: "description", content: "Visit EWU in Aftabnagar, Dhaka — address, phone, email and inquiry form." },
+      { title: "Contact , East West University" },
+      { name: "description", content: "Visit EWU in Aftabnagar, Dhaka , address, phone, email and inquiry form." },
       { property: "og:title", content: "Contact East West University" },
-      { property: "og:description", content: "Get in touch — address, phone, email and inquiry form." },
+      { property: "og:description", content: "Get in touch , address, phone, email and inquiry form." },
     ],
   }),
   component: ContactPage,
@@ -49,7 +49,7 @@ function ContactPage() {
         <div>
           <h2 className="font-serif text-2xl font-bold">Send an inquiry</h2>
           <form
-            onSubmit={(e) => { e.preventDefault(); toast.success("Message sent — we'll reply within 1 business day."); }}
+            onSubmit={(e) => { e.preventDefault(); toast.success("Message sent , we'll reply within 1 business day."); }}
             className="mt-5 space-y-4 rounded-2xl border border-border bg-card p-6"
           >
             <div className="grid gap-4 sm:grid-cols-2">

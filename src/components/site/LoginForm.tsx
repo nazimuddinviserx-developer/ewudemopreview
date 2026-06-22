@@ -17,7 +17,7 @@ export function LoginForm({
 
   function submit(e: React.FormEvent) {
     e.preventDefault();
-    toast.success(`${portal} login — demo only. No backend connected.`);
+    toast.success(`${portal} login , demo only. No backend connected.`);
   }
 
   return (

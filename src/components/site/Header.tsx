@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 
 import { useTheme } from "./ThemeProvider";
+import { Logo } from "./Logo";
 import { SITE } from "@/lib/site-data";
 
 const MAIN_NAV = [
@@ -54,21 +55,13 @@ export function Header() {
             <span className="opacity-60">|</span>
             <span className="opacity-90">Emergency: {SITE.emergency}</span>
           </div>
-          <div className="flex items-center gap-4">
-            <a href={SITE.socials.facebook} className="opacity-80 hover:opacity-100">Facebook</a>
-            <a href={SITE.socials.linkedin} className="opacity-80 hover:opacity-100">LinkedIn</a>
-            <a href={SITE.socials.youtube} className="opacity-80 hover:opacity-100">YouTube</a>
-            <a href={SITE.socials.instagram} className="opacity-80 hover:opacity-100">Instagram</a>
-          </div>
+          <div className="opacity-80">{SITE.tagline}</div>
         </div>
       </div>
 
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-6">
-        <Link to="/" className="flex items-center gap-3">
-          <div className="hidden flex-col leading-tight sm:flex">
-            <span className="font-serif text-lg font-bold text-primary">East West University</span>
-            <span className="text-[10px] tracking-[0.25em] text-muted-foreground uppercase">Excellence in Education</span>
-          </div>
+        <Link to="/" className="flex items-center gap-3" aria-label="East West University home">
+          <Logo />
         </Link>
 
         {/* Desktop nav */}

@@ -6,7 +6,7 @@ import heroFallback from "@/assets/hero-fallback.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — East West University" },
+      { title: "About , East West University" },
       { name: "description", content: "Learn about EWU's history, mission, vision and leadership." },
       { property: "og:title", content: "About East West University" },
       { property: "og:description", content: "History, mission, vision and leadership of EWU." },
@@ -21,7 +21,7 @@ function AboutPage() {
       <PageHero
         eyebrow="About EWU"
         title="A university built for Bangladesh, by Bangladeshis."
-        subtitle="Founded in 1996, East West University has grown into one of the country's most respected private universities — known for academic rigour, research impact and inclusive student life."
+        subtitle="Founded in 1996, East West University has grown into one of the country's most respected private universities , known for academic rigour, research impact and inclusive student life."
         crumbs={[{ to: "/", label: "Home" }, { label: "About" }]}
       />
 
@@ -30,9 +30,9 @@ function AboutPage() {
           <div>
             <h2 className="font-serif text-3xl font-bold text-balance">Our story</h2>
             <div className="mt-5 space-y-4 text-foreground/85">
-              <p>EWU was established by the East West University Foundation with a single ambition — to create a private university whose academic standards rival any public institution in Bangladesh.</p>
+              <p>EWU was established by the East West University Foundation with a single ambition , to create a private university whose academic standards rival any public institution in Bangladesh.</p>
               <p>From 36 students in a leased Dhanmondi building in 1996, we have grown to over 12,400 students across our purpose-built Aftabnagar campus, accredited by the University Grants Commission of Bangladesh.</p>
-              <p>Three decades on, EWU alumni lead industries from banking and telecommunications to public service and the arts — and our research programs are recognised by ADB, World Bank, icddr,b and BIDS.</p>
+              <p>Three decades on, EWU alumni lead industries from banking and telecommunications to public service and the arts , and our research programs are recognised by ADB, World Bank, icddr,b and BIDS.</p>
             </div>
           </div>
           <img src={heroFallback} alt="Campus" loading="lazy" className="aspect-[4/3] w-full rounded-2xl border border-border object-cover shadow-brick" />

@@ -7,7 +7,7 @@ import { Building2 } from "lucide-react";
 export const Route = createFileRoute("/facilities")({
   head: () => ({
     meta: [
-      { title: "Facilities — East West University" },
+      { title: "Facilities , East West University" },
       { name: "description", content: "Library, computer labs, research labs, auditorium, cafeteria, sports, medical and transport." },
       { property: "og:title", content: "Facilities at EWU" },
       { property: "og:description", content: "A campus built for learning, living and building." },
@@ -22,7 +22,7 @@ function FacilitiesPage() {
       <PageHero
         eyebrow="Facilities"
         title="A campus built for learning, living and building."
-        subtitle="From a 120,000-volume library to research labs, sports complexes and a 24/7 medical centre — our Aftabnagar campus has everything students need."
+        subtitle="From a 120,000-volume library to research labs, sports complexes and a 24/7 medical centre , our Aftabnagar campus has everything students need."
         crumbs={[{ to: "/", label: "Home" }, { label: "Facilities" }]}
       />
       <section className="mx-auto max-w-7xl px-6 py-16">
