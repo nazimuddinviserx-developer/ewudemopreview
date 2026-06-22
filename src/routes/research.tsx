@@ -283,6 +283,7 @@ function ResearchPage() {
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
+            aria-label="Search principal investigators"
             placeholder="Try 'Bangla NLP', 'microfinance' or 'pharmacology'"
             className="flex-1 bg-transparent px-2 py-2 text-sm outline-none"
           />

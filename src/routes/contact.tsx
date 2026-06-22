@@ -53,11 +53,11 @@ function ContactPage() {
             className="mt-5 space-y-4 rounded-2xl border border-border bg-card p-6"
           >
             <div className="grid gap-4 sm:grid-cols-2">
-              <input required placeholder="Full name" className="rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary" />
-              <input required type="email" placeholder="Email" className="rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary" />
+              <input required aria-label="Full name" placeholder="Full name" className="rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary" />
+              <input required type="email" aria-label="Email" placeholder="Email" className="rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary" />
             </div>
-            <input required placeholder="Subject" className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary" />
-            <textarea rows={4} required placeholder="Your message" className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary" />
+            <input required aria-label="Subject" placeholder="Subject" className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary" />
+            <textarea rows={4} required aria-label="Your message" placeholder="Your message" className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary" />
             <button type="submit" className="rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-primary-deep">Send message</button>
           </form>
         </div>
@@ -98,13 +98,13 @@ function ContactPage() {
             <h3 className="font-serif text-lg font-bold">Follow EWU</h3>
             <div className="mt-3 flex gap-2">
               {[
-                { i: Facebook, h: SITE.socials.facebook },
-                { i: Instagram, h: SITE.socials.instagram },
-                { i: Youtube, h: SITE.socials.youtube },
-                { i: Linkedin, h: SITE.socials.linkedin },
-                { i: Twitter, h: SITE.socials.twitter },
-              ].map(({ i: Icon, h }, idx) => (
-                <a key={idx} href={h} className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-background hover:border-primary hover:bg-primary hover:text-primary-foreground">
+                { i: Facebook, h: SITE.socials.facebook, label: "Facebook" },
+                { i: Instagram, h: SITE.socials.instagram, label: "Instagram" },
+                { i: Youtube, h: SITE.socials.youtube, label: "YouTube" },
+                { i: Linkedin, h: SITE.socials.linkedin, label: "LinkedIn" },
+                { i: Twitter, h: SITE.socials.twitter, label: "Twitter" },
+              ].map(({ i: Icon, h, label }, idx) => (
+                <a key={idx} href={h} aria-label={`East West University on ${label}`} className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-background hover:border-primary hover:bg-primary hover:text-primary-foreground">
                   <Icon className="h-4 w-4" />
                 </a>
               ))}

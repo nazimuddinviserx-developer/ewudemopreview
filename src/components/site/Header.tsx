@@ -86,7 +86,7 @@ export function Header() {
             onMouseLeave={() => setOthersOpen(false)}
             onFocus={() => setOthersOpen(true)}
             onBlur={(event) => {
-              if (!event.currentTarget.contains(event.relatedTarget)) setOthersOpen(false);
+              if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setOthersOpen(false);
             }}
           >
             <button aria-haspopup="menu" aria-expanded={othersOpen} className="inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-accent hover:text-accent-foreground">
@@ -116,7 +116,7 @@ export function Header() {
             onMouseLeave={() => setLoginOpen(false)}
             onFocus={() => setLoginOpen(true)}
             onBlur={(event) => {
-              if (!event.currentTarget.contains(event.relatedTarget)) setLoginOpen(false);
+              if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setLoginOpen(false);
             }}
           >
             <button aria-haspopup="menu" aria-expanded={loginOpen} className="inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-accent hover:text-accent-foreground">
