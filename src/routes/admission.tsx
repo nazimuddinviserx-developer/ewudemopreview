@@ -20,12 +20,12 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { SCHOLARSHIPS } from "@/lib/site-data";
-import heroAsset from "@/assets/admission-hero.jpg.asset.json";
-import undergradAsset from "@/assets/admission-undergrad.jpg.asset.json";
-import gradAsset from "@/assets/admission-grad.jpg.asset.json";
-import intlAsset from "@/assets/admission-intl.jpg.asset.json";
-import transferAsset from "@/assets/admission-transfer.jpg.asset.json";
-import visitAsset from "@/assets/admission-visit.jpg.asset.json";
+import heroImage from "@/assets/hero-fallback.jpg";
+import undergradImage from "@/assets/about-grad.jpg";
+import gradImage from "@/assets/ach-1.jpg";
+import intlImage from "@/assets/about-campus-aerial.jpg";
+import transferImage from "@/assets/fac-library.jpg";
+import visitImage from "@/assets/about-visit.jpg";
 
 export const Route = createFileRoute("/admission")({
   head: () => ({
@@ -34,8 +34,8 @@ export const Route = createFileRoute("/admission")({
       { name: "description", content: "Apply to EWU. Undergraduate, graduate, international and transfer pathways with requirements, tuition, scholarships and key dates." },
       { property: "og:title", content: "Admission, EWU" },
       { property: "og:description", content: "Undergraduate, graduate, international and transfer pathways. Requirements, fees, scholarships and deadlines." },
-      { property: "og:image", content: heroAsset.url },
-      { name: "twitter:image", content: heroAsset.url },
+      { property: "og:image", content: heroImage },
+      { name: "twitter:image", content: heroImage },
     ],
   }),
   component: AdmissionPage,
@@ -44,28 +44,28 @@ export const Route = createFileRoute("/admission")({
 const CATEGORIES = [
   {
     icon: GraduationCap,
-    img: undergradAsset.url,
+    img: undergradImage,
     title: "Undergraduate",
     body: "Four-year bachelor's programs across Engineering, Business, Pharmacy, Law, Sciences and Humanities.",
     points: ["SSC + HSC or O/A Levels", "Admission test on campus", "Spring & Fall intakes"],
   },
   {
     icon: BookOpen,
-    img: gradAsset.url,
+    img: gradImage,
     title: "Graduate",
     body: "MBA, MSc, MA and professional master's programs designed for working professionals and researchers.",
     points: ["Bachelor's with min. CGPA 2.50", "GRE / GMAT (program specific)", "Evening & weekend classes"],
   },
   {
     icon: Globe2,
-    img: intlAsset.url,
+    img: intlImage,
     title: "International",
     body: "Welcoming students from SAARC, ASEAN, the Middle East and Africa with dedicated international support.",
     points: ["WES / IBCC equivalence", "IELTS 6.0 or TOEFL iBT 70", "Student visa assistance"],
   },
   {
     icon: Repeat,
-    img: transferAsset.url,
+    img: transferImage,
     title: "Transfer",
     body: "Continue your degree at EWU. We honour credits from accredited universities after course-by-course review.",
     points: ["Up to 50% credit transfer", "Course-by-course evaluation", "Rolling admissions"],
@@ -138,7 +138,7 @@ function AdmissionPage() {
     <div>
       {/* HERO with image */}
       <section className="relative overflow-hidden border-b border-primary-deep/30 bg-primary text-primary-foreground">
-        <img src={heroAsset.url} alt="Student at EWU admission desk" className="absolute inset-0 h-full w-full object-cover" />
+        <img src={heroImage} alt="Student at EWU admission desk" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 hero-overlay" />
         <div className="absolute inset-0 bg-gradient-to-r from-primary-deep/70 via-primary-deep/30 to-transparent" />
         <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-20 md:py-28 lg:grid-cols-[1.2fr_1fr] lg:items-center">
@@ -365,7 +365,7 @@ function AdmissionPage() {
 
       {/* VISIT OPTIONS */}
       <section id="visit" className="relative overflow-hidden border-y border-border bg-primary">
-        <img src={visitAsset.url} alt="EWU campus tour" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+        <img src={visitImage} alt="EWU campus tour" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
         <div className="absolute inset-0 hero-overlay" />
         <div className="absolute inset-0 bg-gradient-to-r from-primary-deep/70 via-primary-deep/30 to-transparent" />
         <div className="relative mx-auto max-w-7xl px-6 py-16 text-primary-foreground">
