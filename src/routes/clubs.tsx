@@ -38,6 +38,7 @@ function ClubsPage() {
             <button
               key={c}
               onClick={() => setCat(c)}
+              aria-pressed={cat === c}
               className={`rounded-full border px-4 py-1.5 text-xs font-semibold transition-colors ${
                 cat === c ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card text-foreground/75 hover:border-primary"
               }`}
