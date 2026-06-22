@@ -1,18 +1,13 @@
 import * as React from "react";
-import h2 from "@/assets/hero-2.png.asset.json";
-import h3 from "@/assets/hero-3.png.asset.json";
-import h4 from "@/assets/hero-4.png.asset.json";
-import h5 from "@/assets/hero-5.png.asset.json";
-import h6 from "@/assets/hero-6.png.asset.json";
-import h7 from "@/assets/hero-7.png.asset.json";
+import { img } from "@/lib/images";
 
 const SLIDES = [
-  { url: h2.url, alt: "EWU campus courtyard at convocation" },
-  { url: h3.url, alt: "Campus festival with colourful flags" },
-  { url: h4.url, alt: "Live concert on campus" },
-  { url: h6.url, alt: "EWU convocation ceremony" },
-  { url: h5.url, alt: "Inter-university gaming tournament" },
-  { url: h7.url, alt: "International conference panel" },
+  { url: img("hero-2"), alt: "EWU campus courtyard" },
+  { url: img("hero-3"), alt: "EWU campus aerial view" },
+  { url: img("hero-4"), alt: "Campus cultural festival" },
+  { url: img("hero-6"), alt: "EWU academic achievement ceremony" },
+  { url: img("hero-5"), alt: "EWU graduation ceremony" },
+  { url: img("hero-7"), alt: "EWU library and learning commons" },
 ];
 
 export function HeroSlider() {
