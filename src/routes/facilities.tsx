@@ -23,11 +23,11 @@ import {
   CheckCircle2,
   PlayCircle,
 } from "lucide-react";
-import facHeroAsset from "@/assets/facilities-hero.jpg.asset.json";
-import facClassroomAsset from "@/assets/fac-classroom.jpg.asset.json";
-import facHousingAsset from "@/assets/fac-housing.jpg.asset.json";
-import facWellnessAsset from "@/assets/fac-wellness.jpg.asset.json";
-import campusMapAsset from "@/assets/campus-map.jpg.asset.json";
+import facHeroImage from "@/assets/fac-library.jpg";
+import facClassroomImage from "@/assets/fac-computer.jpg";
+import facHousingImage from "@/assets/fac-auditorium.jpg";
+import facWellnessImage from "@/assets/fac-medical.jpg";
+import campusMapImage from "@/assets/about-campus-aerial.jpg";
 
 export const Route = createFileRoute("/facilities")({
   head: () => ({
@@ -36,8 +36,8 @@ export const Route = createFileRoute("/facilities")({
       { name: "description", content: "Academic spaces, labs, library, housing, athletics, wellness, virtual tour and campus map at EWU Dhaka." },
       { property: "og:title", content: "Facilities at EWU" },
       { property: "og:description", content: "A campus built for learning, living and building." },
-      { property: "og:image", content: facHeroAsset.url },
-      { name: "twitter:image", content: facHeroAsset.url },
+      { property: "og:image", content: facHeroImage },
+      { name: "twitter:image", content: facHeroImage },
     ],
   }),
   component: FacilitiesPage,
@@ -103,7 +103,7 @@ function FacilitiesPage() {
         title="A campus built for learning, living and building."
         subtitle="World-class learning and research environments, from smart lecture halls and 24/7 libraries to maker spaces, sports complexes and wellness centres."
         crumbs={[{ to: "/", label: "Home" }, { label: "Facilities" }]}
-        image={facHeroAsset.url}
+        image={facHeroImage}
         imageAlt="Collage of EWU campus facilities"
       />
 
@@ -130,7 +130,7 @@ function FacilitiesPage() {
             </div>
           </div>
           <div className="relative overflow-hidden rounded-2xl border border-border shadow-brick">
-            <img src={facHeroAsset.url} alt="Campus glimpse" className="aspect-[4/3] w-full object-cover" loading="lazy" />
+            <img src={facHeroImage} alt="Campus glimpse" className="aspect-[4/3] w-full object-cover" loading="lazy" />
           </div>
         </div>
       </section>
@@ -142,7 +142,7 @@ function FacilitiesPage() {
           <h2 className="font-serif text-3xl font-bold md:text-4xl">Where teaching meets technology</h2>
           <div className="mt-10 grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-center">
             <div className="relative overflow-hidden rounded-2xl border border-border">
-              <img src={facClassroomAsset.url} alt="Smart classroom" className="aspect-[4/3] w-full object-cover" loading="lazy" />
+              <img src={facClassroomImage} alt="Smart classroom" className="aspect-[4/3] w-full object-cover" loading="lazy" />
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               {ACADEMIC_SPACES.map((s) => (
@@ -207,7 +207,7 @@ function FacilitiesPage() {
         <div className="mt-10 grid gap-8 lg:grid-cols-2">
           <div>
             <div className="relative overflow-hidden rounded-2xl border border-border">
-              <img src={facHousingAsset.url} alt="Residence hall room" className="aspect-[16/10] w-full object-cover" loading="lazy" />
+              <img src={facHousingImage} alt="Residence hall room" className="aspect-[16/10] w-full object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute bottom-4 left-4 text-white">
                 <Bed className="h-5 w-5 text-gold" />
@@ -279,7 +279,7 @@ function FacilitiesPage() {
         <h2 className="font-serif text-3xl font-bold md:text-4xl">A campus that cares</h2>
         <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_1.2fr] lg:items-center">
           <div className="relative overflow-hidden rounded-2xl border border-border shadow-brick">
-            <img src={facWellnessAsset.url} alt="Wellness centre" className="aspect-[4/3] w-full object-cover" loading="lazy" />
+            <img src={facWellnessImage} alt="Wellness centre" className="aspect-[4/3] w-full object-cover" loading="lazy" />
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {STUDENT_LIFE.map((s) => (
@@ -321,7 +321,7 @@ function FacilitiesPage() {
         <h2 className="font-serif text-3xl font-bold md:text-4xl">Find your way around</h2>
         <div className="mt-8 grid gap-8 lg:grid-cols-[1.6fr_1fr]">
           <div className="relative overflow-hidden rounded-2xl border border-border bg-card">
-            <img src={campusMapAsset.url} alt="Illustrated EWU campus map" className="aspect-[16/10] w-full object-cover" loading="lazy" />
+            <img src={campusMapImage} alt="Illustrated EWU campus map" className="aspect-[16/10] w-full object-cover" loading="lazy" />
             <button className="absolute bottom-4 right-4 inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-brick hover:bg-primary-deep">
               Open interactive map <Map className="h-4 w-4" />
             </button>
