@@ -64,7 +64,7 @@ export function PartnersFloating() {
                   src={p.src}
                   alt={p.name}
                   loading="lazy"
-                  className="max-h-16 w-auto max-w-[140px] object-contain opacity-80 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
+                  className="max-h-16 w-auto max-w-[140px] object-contain opacity-90 transition duration-300 hover:opacity-100"
                 />
               </div>
             ))}
