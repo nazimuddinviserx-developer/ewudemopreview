@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 import { Toaster } from "sonner";
 
 import appCss from "../styles.css?url";
+import logoAsset from "../assets/ewu-logo.png.asset.json";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { ThemeProvider } from "@/components/site/ThemeProvider";
 import { Header } from "@/components/site/Header";
@@ -91,7 +92,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/__l5e/assets-v1/657f9532-7ef5-46d8-9f5d-bdd483bc939e/ewu-logo.png" },
+      { rel: "icon", href: logoAsset.url },
     ],
   }),
   shellComponent: RootShell,
