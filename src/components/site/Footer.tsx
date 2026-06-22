@@ -10,7 +10,7 @@ export function Footer() {
         <div>
           <Logo />
           <p className="mt-4 max-w-xs text-sm text-muted-foreground">
-            East West University — a leading private university in Bangladesh, building tomorrow's leaders since 1996.
+            East West University , a leading private university in Bangladesh, building tomorrow's leaders since 1996.
           </p>
           <div className="mt-5 flex items-center gap-2">
             {[

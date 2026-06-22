@@ -8,10 +8,10 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/clubs")({
   head: () => ({
     meta: [
-      { title: "Student Clubs — East West University" },
-      { name: "description", content: "40+ student clubs and societies at EWU — academic, cultural, sports and service." },
+      { title: "Student Clubs , East West University" },
+      { name: "description", content: "40+ student clubs and societies at EWU , academic, cultural, sports and service." },
       { property: "og:title", content: "Student Clubs at EWU" },
-      { property: "og:description", content: "Find your community — academic, cultural, sports and service clubs." },
+      { property: "og:description", content: "Find your community , academic, cultural, sports and service clubs." },
     ],
   }),
   component: ClubsPage,
@@ -27,7 +27,7 @@ function ClubsPage() {
       <PageHero
         eyebrow="Student Life"
         title="Find your people. Build your story."
-        subtitle="EWU is home to 40+ clubs — from competitive programming to drama, debate, robotics and rural service."
+        subtitle="EWU is home to 40+ clubs , from competitive programming to drama, debate, robotics and rural service."
         crumbs={[{ to: "/", label: "Home" }, { label: "Clubs" }]}
       />
 

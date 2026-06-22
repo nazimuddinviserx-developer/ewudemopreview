@@ -14,9 +14,9 @@ export const Route = createFileRoute("/faculty/$id")({
   },
   head: ({ loaderData }) => ({
     meta: [
-      { title: `${loaderData?.f.name ?? "Faculty"} — EWU` },
+      { title: `${loaderData?.f.name ?? "Faculty"} , EWU` },
       { name: "description", content: loaderData?.f.bio ?? "EWU faculty profile" },
-      { property: "og:title", content: `${loaderData?.f.name ?? "Faculty"} — EWU` },
+      { property: "og:title", content: `${loaderData?.f.name ?? "Faculty"} , EWU` },
       { property: "og:description", content: loaderData?.f.bio ?? "" },
     ],
   }),
@@ -54,7 +54,7 @@ function FacultyProfile() {
   ];
 
   function generateCV() {
-    const html = `<!doctype html><html><head><meta charset='utf-8'><title>CV — ${f.name}</title>
+    const html = `<!doctype html><html><head><meta charset='utf-8'><title>CV , ${f.name}</title>
 <style>
 body{font-family:Georgia,serif;max-width:780px;margin:40px auto;padding:24px;color:#222;line-height:1.5}
 h1{color:#7a2424;margin:0 0 4px;font-size:32px}
@@ -210,10 +210,10 @@ ul{padding-left:20px;margin:8px 0}
               <h3 className="font-serif text-xl font-bold">Selected publications</h3>
               <ol className="mt-4 space-y-3 text-sm">
                 {[
-                  `"Recent advances in ${f.interests[0]}" — Journal of ${dept?.short}, 2026.`,
-                  `"Studies on ${f.interests[1] ?? "applied research"}" — International Review, 2025.`,
-                  `"Bangladesh case study in ${f.interests[0]}" — National Conference, 2024.`,
-                  `"A primer on ${f.interests[0]}" — EWU Press, 2023.`,
+                  `"Recent advances in ${f.interests[0]}" , Journal of ${dept?.short}, 2026.`,
+                  `"Studies on ${f.interests[1] ?? "applied research"}" , International Review, 2025.`,
+                  `"Bangladesh case study in ${f.interests[0]}" , National Conference, 2024.`,
+                  `"A primer on ${f.interests[0]}" , EWU Press, 2023.`,
                 ].map((p, i) => (
                   <li key={i} className="flex gap-3 rounded-lg bg-muted/40 p-3">
                     <span className="font-serif font-bold text-primary">{i + 1}.</span>

@@ -6,9 +6,9 @@ import { CALENDAR } from "@/lib/site-data";
 export const Route = createFileRoute("/academic-calendar")({
   head: () => ({
     meta: [
-      { title: "Academic Calendar — East West University" },
+      { title: "Academic Calendar , East West University" },
       { name: "description", content: "Semester dates, examinations, holidays, convocation and academic deadlines at EWU." },
-      { property: "og:title", content: "Academic Calendar — EWU" },
+      { property: "og:title", content: "Academic Calendar , EWU" },
       { property: "og:description", content: "Important dates for the academic year." },
     ],
   }),

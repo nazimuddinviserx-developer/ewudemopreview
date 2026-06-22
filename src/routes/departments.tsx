@@ -6,7 +6,7 @@ import { DEPARTMENTS } from "@/lib/site-data";
 export const Route = createFileRoute("/departments")({
   head: () => ({
     meta: [
-      { title: "Departments — East West University" },
+      { title: "Departments , East West University" },
       { name: "description", content: "Explore EWU's faculties and departments across Engineering, Business, Pharmacy, Law and Liberal Arts." },
       { property: "og:title", content: "Departments at EWU" },
       { property: "og:description", content: "Faculties and departments across EWU." },
@@ -26,7 +26,7 @@ function DepartmentsPage() {
       <PageHero
         eyebrow="Departments"
         title="Six faculties. Thirty programs. One mission."
-        subtitle="Explore EWU's full academic offering — from undergraduate degrees to PhD research streams."
+        subtitle="Explore EWU's full academic offering , from undergraduate degrees to PhD research streams."
         crumbs={[{ to: "/", label: "Home" }, { label: "Departments" }]}
       />
 

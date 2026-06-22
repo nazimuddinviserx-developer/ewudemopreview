@@ -6,7 +6,7 @@ import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGri
 export const Route = createFileRoute("/research")({
   head: () => ({
     meta: [
-      { title: "Research — East West University" },
+      { title: "Research , East West University" },
       { name: "description", content: "Research labs, ongoing projects, publications and the EWU research dashboard." },
       { property: "og:title", content: "Research at EWU" },
       { property: "og:description", content: "Research excellence with real-world impact, built for Bangladesh." },
@@ -39,7 +39,7 @@ function ResearchPage() {
     <div>
       <PageHero
         eyebrow="Research"
-        title="Research with real-world impact — built for Bangladesh."
+        title="Research with real-world impact , built for Bangladesh."
         subtitle="From AI for Bangla healthcare to resilient solar grids and microfinance policy, EWU researchers publish in top venues and partner with national institutions."
         crumbs={[{ to: "/", label: "Home" }, { label: "Research" }]}
       />
@@ -97,7 +97,7 @@ function ResearchPage() {
               { v: "IEEE TNNLS 2026", t: "Low-resource Bangla speech recognition via self-supervised pre-training", a: "Rahman T., Zaman M., Hossain S." },
               { v: "Energy Policy 2026", t: "Resilience of coastal solar mini-grids during Bay cyclone events", a: "Alam K.M., Karim N." },
               { v: "World Development 2025", t: "Microfinance, mobility, and female labor in rural Bangladesh", a: "Akter R., Ahmed F." },
-              { v: "J. Med. Chem. 2025", t: "Pyrazoline derivatives as anti-dengue agents — a structure-activity study", a: "Kabir S., Hossain I." },
+              { v: "J. Med. Chem. 2025", t: "Pyrazoline derivatives as anti-dengue agents , a structure-activity study", a: "Kabir S., Hossain I." },
             ].map((p) => (
               <div key={p.t} className="grid grid-cols-1 gap-2 p-5 sm:grid-cols-[150px_1fr]">
                 <span className="text-xs font-semibold uppercase tracking-wider text-primary">{p.v}</span>

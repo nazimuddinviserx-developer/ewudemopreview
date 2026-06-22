@@ -73,15 +73,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "East West University — Excellence in Education" },
+      { title: "East West University , Excellence in Education" },
       {
         name: "description",
         content:
-          "East West University (EWU) — a leading private university in Dhaka, Bangladesh. Explore programs, admission, research and campus life.",
+          "East West University (EWU) , a leading private university in Dhaka, Bangladesh. Explore programs, admission, research and campus life.",
       },
       { name: "author", content: "East West University" },
       { property: "og:title", content: "East West University" },
-      { property: "og:description", content: "Excellence in Education — programs, admission, research and campus life." },
+      { property: "og:description", content: "Excellence in Education , programs, admission, research and campus life." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

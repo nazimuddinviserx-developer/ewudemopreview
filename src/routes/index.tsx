@@ -84,7 +84,7 @@ function AboutPreview() {
             A premier private university, building Bangladesh's next generation of leaders since 1996.
           </h2>
           <p className="mt-5 text-base text-muted-foreground text-pretty">
-            EWU brings together rigorous academics, hands-on research and a culture of inclusion —
+            EWU brings together rigorous academics, hands-on research and a culture of inclusion ,
             preparing graduates to lead industry, public service and social change across South Asia.
           </p>
           <div className="mt-8 grid grid-cols-2 gap-6">
@@ -183,7 +183,7 @@ function ScholarshipsBlock() {
             Talent shouldn't depend on tuition.
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Over <strong className="text-foreground">42% of EWU students</strong> receive some form of financial assistance — merit, need-based, sports or quota waivers.
+            Over <strong className="text-foreground">42% of EWU students</strong> receive some form of financial assistance , merit, need-based, sports or quota waivers.
           </p>
           <Link to="/admission" className="mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary-deep">
             Scholarship details <ArrowRight className="h-4 w-4" />
@@ -240,7 +240,7 @@ function ResearchHighlights() {
           <div>
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-gold">Research</p>
             <h2 className="font-serif text-3xl font-bold leading-tight md:text-4xl text-balance">
-              Research with real-world impact — built for Bangladesh.
+              Research with real-world impact , built for Bangladesh.
             </h2>
           </div>
           <Link to="/research" className="inline-flex items-center gap-1 rounded-md border border-primary-foreground/30 bg-primary-foreground/10 px-4 py-2 text-sm font-semibold backdrop-blur hover:bg-primary-foreground/20">
@@ -308,7 +308,7 @@ function ClubsBlock() {
   return (
     <section className="bg-card border-y border-border">
       <div className="mx-auto max-w-7xl px-6 py-20">
-        <SectionHead eyebrow="Student Life" title="Find your people. Build your story." subtitle="40+ clubs and societies — academic, cultural, sports and community service." />
+        <SectionHead eyebrow="Student Life" title="Find your people. Build your story." subtitle="40+ clubs and societies , academic, cultural, sports and community service." />
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {CLUBS.slice(0, 4).map((c) => (
             <Link key={c.slug} to="/clubs" className="group rounded-2xl border border-border bg-background p-5 transition-colors hover:border-primary">

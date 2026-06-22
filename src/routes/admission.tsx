@@ -6,9 +6,9 @@ import { SCHOLARSHIPS } from "@/lib/site-data";
 export const Route = createFileRoute("/admission")({
   head: () => ({
     meta: [
-      { title: "Admission — East West University" },
+      { title: "Admission , East West University" },
       { name: "description", content: "Apply to EWU. Eligibility, application process, tuition fees, scholarships and important dates." },
-      { property: "og:title", content: "Admission — EWU" },
+      { property: "og:title", content: "Admission , EWU" },
       { property: "og:description", content: "Apply to EWU. Eligibility, fees, scholarships, deadlines." },
     ],
   }),
@@ -99,7 +99,7 @@ function AdmissionPage() {
                   </div>
                 ))}
               </dl>
-              <p className="mt-3 text-xs text-muted-foreground">Indicative — actual fees depend on credit load.</p>
+              <p className="mt-3 text-xs text-muted-foreground">Indicative , actual fees depend on credit load.</p>
             </div>
 
             <a className="block rounded-2xl brand-gradient p-6 text-primary-foreground shadow-brick">
