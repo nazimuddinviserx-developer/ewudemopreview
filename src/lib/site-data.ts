@@ -18,16 +18,16 @@ export const SITE = {
 };
 
 export const NEWS_TICKER = [
-  { tag: "Admission", text: "Spring 2027 admission is now open — apply by 15 January." },
+  { tag: "Admission", text: "Spring 2027 admission is now open , apply by 15 January." },
   { tag: "Notice", text: "Mid-term examinations begin 8 March across all departments." },
-  { tag: "Event", text: "EWU Research Festival 2027 — register before 22 February." },
+  { tag: "Event", text: "EWU Research Festival 2027 , register before 22 February." },
   { tag: "Scholarship", text: "Vice-Chancellor's Merit Scholarship results published." },
   { tag: "Update", text: "New AI & Data Science minor launching Fall 2027." },
   { tag: "Convocation", text: "29th Convocation scheduled for 18 April." },
 ];
 
 export const DEPARTMENTS = [
-  { slug: "cse", name: "Computer Science & Engineering", faculty: "Faculty of Sciences & Engineering", short: "CSE", students: 1820, faculty_count: 48, programs: 4, summary: "Software, AI, systems and theory — preparing engineers for Bangladesh's digital decade." },
+  { slug: "cse", name: "Computer Science & Engineering", faculty: "Faculty of Sciences & Engineering", short: "CSE", students: 1820, faculty_count: 48, programs: 4, summary: "Software, AI, systems and theory , preparing engineers for Bangladesh's digital decade." },
   { slug: "eee", name: "Electrical & Electronic Engineering", faculty: "Faculty of Sciences & Engineering", short: "EEE", students: 1240, faculty_count: 32, programs: 3, summary: "Power, signals, embedded systems and renewable energy research." },
   { slug: "bba", name: "Business Administration", faculty: "Faculty of Business & Economics", short: "BBA", students: 2350, faculty_count: 58, programs: 5, summary: "Globally aligned business education with strong industry integration." },
   { slug: "economics", name: "Economics", faculty: "Faculty of Liberal Arts & Social Sciences", short: "ECO", students: 720, faculty_count: 22, programs: 3, summary: "Applied economics, development policy and South Asian markets." },
@@ -71,21 +71,21 @@ export const FACILITIES = [
 ];
 
 export const SCHOLARSHIPS = [
-  "Vice-Chancellor's Merit Scholarship — 100% tuition for top SSC/HSC scorers.",
-  "Dean's Merit Award — up to 50% waiver for top 5% of each semester.",
-  "Need-based Financial Aid — for families with documented hardship.",
-  "Freedom Fighter Quota Waiver — full tuition for descendants.",
-  "Sibling Waiver — 10% on tuition when a sibling is currently enrolled.",
-  "Sports & Cultural Excellence Scholarship — for national-level performers.",
-  "Female Student Encouragement Award — annual stipend for STEM majors.",
+  "Vice-Chancellor's Merit Scholarship , 100% tuition for top SSC/HSC scorers.",
+  "Dean's Merit Award , up to 50% waiver for top 5% of each semester.",
+  "Need-based Financial Aid , for families with documented hardship.",
+  "Freedom Fighter Quota Waiver , full tuition for descendants.",
+  "Sibling Waiver , 10% on tuition when a sibling is currently enrolled.",
+  "Sports & Cultural Excellence Scholarship , for national-level performers.",
+  "Female Student Encouragement Award , annual stipend for STEM majors.",
 ];
 
 export const CALENDAR = [
   { date: "2027-01-08", title: "Spring 2027 Classes Begin", type: "Semester" },
   { date: "2027-01-15", title: "Spring Admission Deadline", type: "Admission" },
-  { date: "2027-02-21", title: "International Mother Language Day — Holiday", type: "Holiday" },
+  { date: "2027-02-21", title: "International Mother Language Day , Holiday", type: "Holiday" },
   { date: "2027-03-08", title: "Mid-Term Examinations", type: "Exam" },
-  { date: "2027-03-26", title: "Independence Day — Holiday", type: "Holiday" },
+  { date: "2027-03-26", title: "Independence Day , Holiday", type: "Holiday" },
   { date: "2027-04-14", title: "Pohela Boishakh Celebration", type: "Event" },
   { date: "2027-04-18", title: "29th Convocation", type: "Event" },
   { date: "2027-05-02", title: "Final Examinations Begin", type: "Exam" },
@@ -95,11 +95,11 @@ export const CALENDAR = [
 
 export const FAQS = [
   { q: "What programs does EWU offer?", a: "30+ undergraduate and graduate programs across Engineering, Business, Pharmacy, Law, Economics and Liberal Arts." },
-  { q: "When is the next admission cycle?", a: "Spring, Summer and Fall — applications open ~8 weeks before each semester. Spring 2027 is open now." },
-  { q: "Are scholarships available for new students?", a: "Yes — merit, need-based, sports and quota waivers. Decisions are announced with the admission offer." },
-  { q: "Is the campus accessible by public transport?", a: "Yes — EWU runs shuttle buses from 14 points across Dhaka and the campus is on a main road in Aftabnagar." },
+  { q: "When is the next admission cycle?", a: "Spring, Summer and Fall , applications open ~8 weeks before each semester. Spring 2027 is open now." },
+  { q: "Are scholarships available for new students?", a: "Yes , merit, need-based, sports and quota waivers. Decisions are announced with the admission offer." },
+  { q: "Is the campus accessible by public transport?", a: "Yes , EWU runs shuttle buses from 14 points across Dhaka and the campus is on a main road in Aftabnagar." },
   { q: "Does EWU have hostel facilities?", a: "Affiliated hostels for female students; a list of vetted private hostels for all students is available from Student Services." },
-  { q: "How can I contact a specific faculty member?", a: "Use the Faculty Directory — each profile lists office hours, email and research interests." },
+  { q: "How can I contact a specific faculty member?", a: "Use the Faculty Directory , each profile lists office hours, email and research interests." },
 ];
 
 export function deptBySlug(slug: string) {

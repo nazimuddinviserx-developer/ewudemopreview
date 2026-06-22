@@ -8,8 +8,6 @@
 @import "@fontsource/poppins/600.css";
 @import "@fontsource/poppins/700.css";
 @import "@fontsource/poppins/800.css";
-@import "@fontsource/playfair-display/400.css";
-@import "@fontsource/playfair-display/700.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -20,7 +18,7 @@
 
 @theme inline {
   --font-sans: "Poppins", system-ui, sans-serif;
-  --font-serif: "Playfair Display", Georgia, serif;
+  --font-serif: "Poppins", system-ui, sans-serif;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -80,11 +78,11 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.18 0.02 30);
 
-  /* Red Brick primary — EWU signature */
-  --primary: oklch(0.45 0.155 30);
+  /* EWU brick: deeper, more muted maroon (toned down) */
+  --primary: oklch(0.42 0.09 30);
   --primary-foreground: oklch(0.985 0.006 60);
-  --primary-soft: oklch(0.94 0.04 30);
-  --primary-deep: oklch(0.32 0.13 30);
+  --primary-soft: oklch(0.94 0.025 30);
+  --primary-deep: oklch(0.3 0.075 30);
 
   --secondary: oklch(0.96 0.012 60);
   --secondary-foreground: oklch(0.22 0.03 30);
@@ -104,7 +102,7 @@
 
   --border: oklch(0.9 0.02 50);
   --input: oklch(0.92 0.015 50);
-  --ring: oklch(0.45 0.155 30);
+  --ring: oklch(0.42 0.09 30);
 
   --chart-1: oklch(0.45 0.155 30);
   --chart-2: oklch(0.78 0.13 80);
@@ -131,10 +129,10 @@
   --popover: oklch(0.21 0.02 30);
   --popover-foreground: oklch(0.96 0.01 60);
 
-  --primary: oklch(0.66 0.16 30);
+  --primary: oklch(0.62 0.1 30);
   --primary-foreground: oklch(0.15 0.02 30);
-  --primary-soft: oklch(0.28 0.08 30);
-  --primary-deep: oklch(0.78 0.14 30);
+  --primary-soft: oklch(0.28 0.05 30);
+  --primary-deep: oklch(0.74 0.09 30);
 
   --secondary: oklch(0.26 0.025 30);
   --secondary-foreground: oklch(0.96 0.01 60);
