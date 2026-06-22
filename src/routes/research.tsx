@@ -78,14 +78,14 @@ const FUNDING = [
 ];
 
 const STUDENT_PATHS = [
-  { icon: GraduationCap, title: "Undergraduate Research Assistantship", body: "Join an active lab in your third or fourth year — paid stipend, course credit and conference travel.", cta: "Apply (UG)" },
+  { icon: GraduationCap, title: "Undergraduate Research Assistantship", body: "Join an active lab in your third or fourth year, paid stipend, course credit and conference travel.", cta: "Apply (UG)" },
   { icon: BookOpen, title: "Graduate Thesis Track", body: "MSc and MA students pair with a principal investigator for an 18-month thesis project.", cta: "Find an advisor" },
   { icon: Sparkles, title: "Summer Research Fellowship", body: "Eight-week, fully funded summer programme open across all faculties.", cta: "View 2027 cohort" },
 ];
 
 const NEWS = [
   { tag: "Announcement", date: "12 Jun 2026", title: "EWU wins BDT 2.4 crore UGC grant for Bangla LLM research" },
-  { tag: "Event", date: "22 Jul 2026", title: "Research Symposium 2026 — call for posters now open" },
+  { tag: "Event", date: "22 Jul 2026", title: "Research Symposium 2026, call for posters now open" },
   { tag: "Publication", date: "03 Aug 2026", title: "Nature Energy features EWU work on coastal solar resilience" },
   { tag: "Lecture", date: "18 Aug 2026", title: "Public lecture: 'The Future of Microfinance in South Asia'" },
 ];
@@ -127,7 +127,7 @@ function ResearchPage() {
         <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-primary">Research Areas</p>
         <h2 className="font-serif text-3xl font-bold md:text-4xl">Six themes shaping our work</h2>
         <p className="mt-3 max-w-2xl text-muted-foreground">
-          Categorised focus areas that span every faculty — pick a theme to explore the labs, projects and people behind it.
+          Categorised focus areas that span every faculty, pick a theme to explore the labs, projects and people behind it.
         </p>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {THEMES.map((t) => (
@@ -245,9 +245,9 @@ function ResearchPage() {
 
       {/* STUDENT OPPORTUNITIES */}
       <section className="relative overflow-hidden border-y border-border bg-primary">
-        <img src={img("hero-4")} alt="" aria-hidden className="absolute inset-0 h-full w-full object-cover opacity-25" loading="lazy" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/55" />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary-deep/60 via-transparent to-transparent" />
+        <img src={img("hero-4")} alt="" aria-hidden className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+        <div className="absolute inset-0 hero-overlay" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-deep/70 via-primary-deep/30 to-transparent" />
         <div className="relative mx-auto max-w-7xl px-6 py-16 text-primary-foreground">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-gold">Student Opportunities</p>
           <h2 className="font-serif text-3xl font-bold md:text-4xl">Join an active research project</h2>
