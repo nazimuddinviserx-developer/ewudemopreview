@@ -118,7 +118,7 @@ const DEADLINES = [
 
 const VISITS = [
   { icon: MapPin, title: "Campus Tour", body: "Guided 60-minute walking tour of academic buildings, library and labs.", cta: "Book a tour" },
-  { icon: Sparkles, title: "Info Session", body: "Live Q&A with the admissions team — held every Wednesday at 3 PM.", cta: "Reserve a seat" },
+  { icon: Sparkles, title: "Info Session", body: "Live Q&A with the admissions team, held every Wednesday at 3 PM.", cta: "Reserve a seat" },
   { icon: Globe2, title: "Virtual Open House", body: "Explore EWU from anywhere via our interactive 360° campus walkthrough.", cta: "Start virtual tour" },
 ];
 
@@ -126,7 +126,7 @@ const FAQS = [
   { q: "When can I apply for Spring 2027?", a: "Applications open 15 November 2026 and close 15 January 2027. Early Decision applicants get a response by 5 December 2026." },
   { q: "Is SAT or GRE required?", a: "SAT/GRE are optional but strongly recommended. Strong scores can waive the on-campus admission test." },
   { q: "What is the application fee?", a: "BDT 1,000 for domestic applicants and USD 30 for international applicants, payable online via bKash, Nagad, Visa or DBBL." },
-  { q: "Do you offer payment plans?", a: "Yes — tuition can be paid in three instalments per semester at no additional cost." },
+  { q: "Do you offer payment plans?", a: "Yes, tuition can be paid in three instalments per semester at no additional cost." },
   { q: "Are scholarships available?", a: "EWU awards merit-based, need-based and special scholarships up to 100% tuition waiver. See the Scholarships section below." },
   { q: "Can I defer admission?", a: "Approved offers can be deferred by one semester with a written request to the Admissions Office." },
 ];
@@ -153,7 +153,7 @@ function AdmissionPage() {
               Welcome to where your future takes shape.
             </h1>
             <p className="mt-5 max-w-2xl text-base text-primary-foreground/85 md:text-lg">
-              Rooted in integrity, inquiry and impact — EWU has welcomed over 30,000 students into careers that move
+              Rooted in integrity, inquiry and impact, EWU has welcomed over 30,000 students into careers that move
               Bangladesh forward. Spring 2027 applications are now open.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
@@ -178,7 +178,7 @@ function AdmissionPage() {
         <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-primary">Student Categories</p>
         <h2 className="font-serif text-3xl font-bold leading-tight md:text-4xl">Find your pathway</h2>
         <p className="mt-3 max-w-2xl text-muted-foreground">
-          Tailored guidance for every applicant — pick the route that matches your background and goals.
+          Tailored guidance for every applicant, pick the route that matches your background and goals.
         </p>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -279,7 +279,7 @@ function AdmissionPage() {
                 </div>
               ))}
             </dl>
-            <p className="mt-3 text-xs text-muted-foreground">Indicative — actual fees depend on credit load.</p>
+            <p className="mt-3 text-xs text-muted-foreground">Indicative, actual fees depend on credit load.</p>
           </div>
 
           <a id="apply-cta" className="block rounded-2xl brand-gradient p-6 text-primary-foreground shadow-brick">
@@ -342,7 +342,7 @@ function AdmissionPage() {
       <section className="mx-auto max-w-7xl px-6 py-16">
         <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-primary">Important Dates</p>
         <h2 className="font-serif text-3xl font-bold md:text-4xl">Spring 2027 timeline</h2>
-        <p className="mt-3 max-w-2xl text-muted-foreground">Mark your calendar — every key date in one scannable timeline.</p>
+        <p className="mt-3 max-w-2xl text-muted-foreground">Mark your calendar, every key date in one scannable timeline.</p>
 
         <div className="relative mt-10">
           <div className="absolute left-4 top-0 bottom-0 w-px bg-border md:left-1/2" />
@@ -372,7 +372,7 @@ function AdmissionPage() {
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-gold">Visit & Experience</p>
           <h2 className="font-serif text-3xl font-bold md:text-4xl">Come see EWU for yourself</h2>
           <p className="mt-3 max-w-2xl text-primary-foreground/85">
-            Walk the halls, sit in on a class or join us virtually — there's a way for every applicant to experience campus.
+            Walk the halls, sit in on a class or join us virtually, there's a way for every applicant to experience campus.
           </p>
 
           <div className="mt-10 grid gap-5 md:grid-cols-3">
@@ -427,7 +427,7 @@ function AdmissionPage() {
               {[
                 { icon: Phone, label: "Call us", value: "+880 1700 000 000" },
                 { icon: Mail, label: "Email", value: "admission@ewubd.example" },
-                { icon: MessageCircle, label: "Live chat", value: "Available on portal — 10 AM to 6 PM" },
+                { icon: MessageCircle, label: "Live chat", value: "Available on portal, 10 AM to 6 PM" },
                 { icon: MapPin, label: "Visit", value: "A/2, Jahurul Islam Avenue, Aftabnagar, Dhaka" },
               ].map((c) => (
                 <div key={c.label} className="flex items-start gap-3 rounded-xl border border-border bg-card p-4">

@@ -70,20 +70,20 @@ const LIBRARY_HIGHLIGHTS = [
 
 const HOUSING_DINING = [
   { type: "Single rooms", body: "Private study, attached washroom, monthly utilities included." },
-  { type: "Double sharing", body: "Two-bed rooms with shared desk space — most popular option." },
+  { type: "Double sharing", body: "Two-bed rooms with shared desk space, most popular option." },
   { type: "Triple sharing", body: "Budget-friendly three-bed rooms with communal lounge." },
 ];
 
 const DINING_VENUES = [
-  "Main Cafeteria — halal Bangladeshi, Asian and continental",
-  "Food Court — six rotating local vendors, open till 9 PM",
-  "Library Café — coffee, sandwiches and quiet seating",
-  "Faculty Lounge — table-service dining for staff & guests",
+  "Main Cafeteria, halal Bangladeshi, Asian and continental",
+  "Food Court, six rotating local vendors, open till 9 PM",
+  "Library Café, coffee, sandwiches and quiet seating",
+  "Faculty Lounge, table-service dining for staff & guests",
 ];
 
 const ATHLETICS = [
   { icon: Trophy, title: "Indoor Gymnasium", body: "Basketball, volleyball, badminton and table-tennis courts." },
-  { icon: HeartPulse, title: "Fitness Centre", body: "Cardio, free weights and group classes — open 6 AM to 10 PM." },
+  { icon: HeartPulse, title: "Fitness Centre", body: "Cardio, free weights and group classes, open 6 AM to 10 PM." },
   { icon: Sparkles, title: "Swimming Pool", body: "25 m, six-lane pool with separate hours for women and men." },
   { icon: Compass, title: "Outdoor Fields", body: "Full football pitch, cricket nets and a 400 m running track." },
 ];
@@ -101,7 +101,7 @@ function FacilitiesPage() {
       <PageHero
         eyebrow="Facilities"
         title="A campus built for learning, living and building."
-        subtitle="World-class learning and research environments — from smart lecture halls and 24/7 libraries to maker spaces, sports complexes and wellness centres."
+        subtitle="World-class learning and research environments, from smart lecture halls and 24/7 libraries to maker spaces, sports complexes and wellness centres."
         crumbs={[{ to: "/", label: "Home" }, { label: "Facilities" }]}
         image={facHeroAsset.url}
         imageAlt="Collage of EWU campus facilities"
@@ -118,7 +118,7 @@ function FacilitiesPage() {
             <p className="mt-4 text-muted-foreground">
               The Aftabnagar campus brings together classrooms, labs, libraries, residences and recreation
               into one walkable district. Every space is built to be accessible, inclusive and open seven days
-              a week during semesters — because the best ideas rarely arrive on schedule.
+              a week during semesters, because the best ideas rarely arrive on schedule.
             </p>
             <div className="mt-6 grid grid-cols-3 gap-4">
               {[["12", "Buildings"], ["48+", "Labs"], ["120K+", "Volumes"]].map(([n, l]) => (
@@ -164,7 +164,7 @@ function FacilitiesPage() {
         <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-primary">Laboratories & Research</p>
         <h2 className="font-serif text-3xl font-bold md:text-4xl">Where curiosity becomes capability</h2>
         <p className="mt-3 max-w-2xl text-muted-foreground">
-          Specialised labs and maker spaces open to students and faculty — most accessible round the clock with prior booking.
+          Specialised labs and maker spaces open to students and faculty, most accessible round the clock with prior booking.
         </p>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {LABS.map((l) => (
