@@ -25,7 +25,7 @@ import {
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from "recharts";
 import { img } from "@/lib/images";
 import { FACULTY } from "@/lib/site-data";
-import researchHeroAsset from "@/assets/research-hero.jpg.asset.json";
+import researchHeroImage from "@/assets/res-1.jpg";
 
 export const Route = createFileRoute("/research")({
   head: () => ({
@@ -34,8 +34,8 @@ export const Route = createFileRoute("/research")({
       { name: "description", content: "Research themes, centres, impact, funding, student opportunities and faculty directory at EWU." },
       { property: "og:title", content: "Research at EWU" },
       { property: "og:description", content: "Research excellence with real-world impact, built for Bangladesh." },
-      { property: "og:image", content: researchHeroAsset.url },
-      { name: "twitter:image", content: researchHeroAsset.url },
+      { property: "og:image", content: researchHeroImage },
+      { name: "twitter:image", content: researchHeroImage },
     ],
   }),
   component: ResearchPage,
@@ -103,7 +103,7 @@ function ResearchPage() {
         title="Research with real-world impact, built for Bangladesh."
         subtitle="From AI for Bangla healthcare to resilient solar grids and microfinance policy, EWU researchers publish in top venues and partner with national institutions."
         crumbs={[{ to: "/", label: "Home" }, { label: "Research" }]}
-        image={researchHeroAsset.url}
+        image={researchHeroImage}
         imageAlt="EWU researchers at work"
       />
 
