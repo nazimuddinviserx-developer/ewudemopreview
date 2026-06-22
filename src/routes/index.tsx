@@ -259,10 +259,10 @@ function ResearchHighlights() {
     { tag: "Energy", title: "Solar Mini-Grid Resilience for Coastal Bangladesh", lead: "Dr. Kazi Mahbubul Alam, EEE", img: "res-2" },
     { tag: "Economics", title: "Microfinance & Female Labor Force Participation", lead: "Dr. Rumana Akter, Economics", img: "res-3" },
   ];
-  const stats = [
+  const stats: { value: number; suffix?: string; prefix?: string; label: string }[] = [
     { value: 1820, suffix: "+", label: "Publications" },
-    { value: 32, suffix: "", label: "Research groups" },
-    { value: 14, suffix: "", label: "Funded labs" },
+    { value: 32, label: "Research groups" },
+    { value: 14, label: "Funded labs" },
     { value: 18, prefix: "৳", suffix: " Cr", label: "2025 funding" },
   ];
   return (
