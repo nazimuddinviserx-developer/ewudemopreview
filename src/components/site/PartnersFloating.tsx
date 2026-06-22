@@ -1,26 +1,16 @@
 import { Handshake } from "lucide-react";
-import baete from "@/assets/partners/baete.png.asset.json";
-import washington from "@/assets/partners/washington-accord.png.asset.json";
-import acbsp from "@/assets/partners/acbsp.png.asset.json";
-import caBd from "@/assets/partners/ca-bangladesh.png.asset.json";
-import icmab from "@/assets/partners/icmab.png.asset.json";
-import acca from "@/assets/partners/acca.png.asset.json";
-import bicm from "@/assets/partners/bicm.png.asset.json";
-import icsb from "@/assets/partners/icsb.png.asset.json";
-import banglalink from "@/assets/partners/banglalink.png.asset.json";
-import macquarie from "@/assets/partners/macquarie.png.asset.json";
 
-const PARTNERS: { name: string; src: string }[] = [
-  { name: "BAETE", src: baete.url },
-  { name: "Washington Accord", src: washington.url },
-  { name: "ACBSP", src: acbsp.url },
-  { name: "ICAB", src: caBd.url },
-  { name: "ICMAB", src: icmab.url },
-  { name: "ACCA", src: acca.url },
-  { name: "BICM", src: bicm.url },
-  { name: "ICSB", src: icsb.url },
-  { name: "Banglalink", src: banglalink.url },
-  { name: "Macquarie University", src: macquarie.url },
+const PARTNERS = [
+  "BAETE",
+  "Washington Accord",
+  "ACBSP",
+  "ICAB",
+  "ICMAB",
+  "ACCA",
+  "BICM",
+  "ICSB",
+  "Banglalink",
+  "Macquarie University",
 ];
 
 export function PartnersFloating() {
@@ -57,15 +47,12 @@ export function PartnersFloating() {
           <div className="flex w-max gap-6 animate-[partners-marquee_45s_linear_infinite] group-hover:[animation-play-state:paused]">
             {loop.map((p, i) => (
               <div
-                key={`${p.name}-${i}`}
+                key={`${p}-${i}`}
                 className="flex h-28 w-48 shrink-0 items-center justify-center rounded-2xl border border-border bg-background px-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-brick"
               >
-                <img
-                  src={p.src}
-                  alt={p.name}
-                  loading="lazy"
-                  className="max-h-16 w-auto max-w-[140px] object-contain opacity-90 transition duration-300 hover:opacity-100"
-                />
+                <span className="text-center text-sm font-bold uppercase tracking-wide text-primary">
+                  {p}
+                </span>
               </div>
             ))}
           </div>

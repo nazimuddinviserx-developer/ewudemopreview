@@ -1,13 +1,10 @@
-import logoAsset from "@/assets/ewu-logo.png.asset.json";
-
 export function Logo({ className = "" }: { className?: string }) {
   return (
-    <img
-      src={logoAsset.url}
-      alt="East West University logo"
-      className={`h-10 w-auto ${className}`}
-      width={220}
-      height={56}
-    />
+    <div
+      aria-label="East West University"
+      className={`flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground ${className}`}
+    >
+      EWU
+    </div>
   );
 }

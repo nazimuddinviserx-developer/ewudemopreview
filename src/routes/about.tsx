@@ -17,7 +17,7 @@ import {
   BookOpen,
   Compass,
 } from "lucide-react";
-import aboutHero from "@/assets/about-hero.png.asset.json";
+import aboutHero from "@/assets/about-campus-aerial.jpg";
 import leader1 from "@/assets/leader-1.jpg";
 import leader2 from "@/assets/leader-2.jpg";
 import leader3 from "@/assets/leader-3.jpg";
@@ -35,7 +35,7 @@ export const Route = createFileRoute("/about")({
       { name: "description", content: "History, mission, leadership, academics and campus life of East West University, Dhaka." },
       { property: "og:title", content: "About East West University" },
       { property: "og:description", content: "Discover EWU's story, leadership, academics and campus life." },
-      { property: "og:image", content: aboutHero.url },
+      { property: "og:image", content: aboutHero },
       { property: "og:url", content: "/about" },
     ],
     links: [{ rel: "canonical", href: "/about" }],
@@ -61,7 +61,7 @@ function AboutPage() {
       {/* 1. Hero with image */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <img src={aboutHero.url} alt="East West University campus" className="h-full w-full object-cover" />
+          <img src={aboutHero} alt="East West University campus" className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-primary-deep/90 via-primary-deep/70 to-primary-deep/30" />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 py-28 text-primary-foreground md:py-36">
