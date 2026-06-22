@@ -10,6 +10,7 @@ import {
   User,
   Briefcase,
   Phone,
+  LogIn,
 } from "lucide-react";
 
 import { useTheme } from "./ThemeProvider";
@@ -33,15 +34,16 @@ const OTHERS = [
 ] as const;
 
 const LOGINS = [
-  { to: "/login/faculty", label: "Faculty", icon: User },
-  { to: "/login/nts", label: "NTS", icon: Briefcase },
-  { to: "/login/student", label: "Student", icon: GraduationCap },
+  { to: "/login/student", label: "Student", icon: GraduationCap, desc: "Grades, registration, resources" },
+  { to: "/login/faculty", label: "Faculty", icon: User, desc: "Courses, attendance, grading" },
+  { to: "/login/nts", label: "NTS", icon: Briefcase, desc: "Non-teaching staff workspace" },
 ] as const;
 
 export function Header() {
   const { theme, toggle } = useTheme();
   const [mobile, setMobile] = React.useState(false);
   const [othersOpen, setOthersOpen] = React.useState(false);
+  const [loginOpen, setLoginOpen] = React.useState(false);
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur-xl">
@@ -102,21 +104,41 @@ export function Header() {
               </div>
             )}
           </div>
+
+          {/* Single Login dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setLoginOpen(true)}
+            onMouseLeave={() => setLoginOpen(false)}
+          >
+            <button className="inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-accent hover:text-accent-foreground">
+              <LogIn className="h-4 w-4" /> Login <ChevronDown className="h-4 w-4" />
+            </button>
+            {loginOpen && (
+              <div className="absolute right-0 top-full w-72 pt-2">
+                <div className="overflow-hidden rounded-xl border border-border bg-popover p-1.5 shadow-brick">
+                  {LOGINS.map((l) => (
+                    <Link
+                      key={l.to}
+                      to={l.to}
+                      className="flex items-start gap-3 rounded-md p-2.5 transition-colors hover:bg-accent"
+                    >
+                      <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg brand-gradient text-primary-foreground">
+                        <l.icon className="h-4 w-4" />
+                      </span>
+                      <span className="min-w-0">
+                        <p className="text-sm font-semibold leading-tight">{l.label} Portal</p>
+                        <p className="text-xs text-muted-foreground">{l.desc}</p>
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
         </nav>
 
         <div className="flex items-center gap-1.5">
-          <div className="hidden items-center gap-1 lg:flex">
-            {LOGINS.map((l) => (
-              <Link
-                key={l.to}
-                to={l.to}
-                title={`${l.label} Login`}
-                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border bg-card text-foreground/80 transition-colors hover:border-primary hover:text-primary"
-              >
-                <l.icon className="h-4 w-4" />
-              </Link>
-            ))}
-          </div>
           <button
             onClick={toggle}
             aria-label="Toggle theme"
@@ -154,7 +176,8 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
-            <div className="grid grid-cols-3 gap-2 pt-2">
+            <p className="px-3 pt-3 text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Login</p>
+            <div className="grid grid-cols-3 gap-2">
               {LOGINS.map((l) => (
                 <Link
                   key={l.to}
@@ -163,7 +186,7 @@ export function Header() {
                   className="flex flex-col items-center gap-1 rounded-md border border-border bg-card px-2 py-3 text-xs font-medium"
                 >
                   <l.icon className="h-4 w-4 text-primary" />
-                  {l.label} Login
+                  {l.label}
                 </Link>
               ))}
             </div>
