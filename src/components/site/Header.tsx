@@ -11,7 +11,7 @@ import {
   Briefcase,
   Phone,
 } from "lucide-react";
-import { Logo } from "./Logo";
+
 import { useTheme } from "./ThemeProvider";
 import { SITE } from "@/lib/site-data";
 
