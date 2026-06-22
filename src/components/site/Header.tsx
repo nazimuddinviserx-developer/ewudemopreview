@@ -11,7 +11,7 @@ import {
   Briefcase,
   Phone,
 } from "lucide-react";
-import { Logo } from "./Logo";
+
 import { useTheme } from "./ThemeProvider";
 import { SITE } from "@/lib/site-data";
 
@@ -65,7 +65,6 @@ export function Header() {
 
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-6">
         <Link to="/" className="flex items-center gap-3">
-          <Logo />
           <div className="hidden flex-col leading-tight sm:flex">
             <span className="font-serif text-lg font-bold text-primary">East West University</span>
             <span className="text-[10px] tracking-[0.25em] text-muted-foreground uppercase">Excellence in Education</span>
