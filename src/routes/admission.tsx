@@ -1,19 +1,27 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
-import { CheckCircle2, Award, Calendar, ArrowRight, FileText, Wallet, Clock } from "lucide-react";
+import { CheckCircle2, Award, ArrowRight, FileText, Wallet, Clock } from "lucide-react";
 import { SCHOLARSHIPS } from "@/lib/site-data";
+import { img } from "@/lib/images";
 
 export const Route = createFileRoute("/admission")({
   head: () => ({
     meta: [
-      { title: "Admission , East West University" },
+      { title: "Admission, East West University" },
       { name: "description", content: "Apply to EWU. Eligibility, application process, tuition fees, scholarships and important dates." },
-      { property: "og:title", content: "Admission , EWU" },
+      { property: "og:title", content: "Admission, EWU" },
       { property: "og:description", content: "Apply to EWU. Eligibility, fees, scholarships, deadlines." },
     ],
   }),
   component: AdmissionPage,
 });
+
+const ELIGIBILITY = [
+  { img: "hero-2", title: "SSC & HSC route", body: "Minimum GPA 2.50 in both SSC and HSC (or equivalent). Combined SSC + HSC GPA of 6.00 with no individual below 2.50." },
+  { img: "hero-3", title: "GCE / O & A Levels", body: "Minimum 5 O-Levels with grade B or above, plus 2 A-Levels with grade C or above. Equivalence certificate accepted." },
+  { img: "hero-4", title: "International students", body: "WES or equivalent credential evaluation accepted. Additional English proficiency may be required for non-English medium applicants." },
+  { img: "hero-5", title: "Transfer applicants", body: "Students from accredited universities can apply for credit transfer. Each course is reviewed by the relevant department." },
+];
 
 function AdmissionPage() {
   return (
@@ -25,25 +33,34 @@ function AdmissionPage() {
         crumbs={[{ to: "/", label: "Home" }, { label: "Admission" }]}
       />
 
+      {/* Eligibility — card style */}
       <section className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr]">
-          <div>
-            <h2 className="font-serif text-3xl font-bold">Eligibility</h2>
-            <ul className="mt-5 space-y-3">
-              {[
-                "Minimum GPA 2.50 in both SSC and HSC (or equivalent).",
-                "Combined SSC + HSC GPA of 6.00 with no individual below 2.50.",
-                "GCE candidates: minimum 5 O-Levels (≥B) and 2 A-Levels (≥C).",
-                "International students: WES or equivalent credential evaluation.",
-              ].map((e) => (
-                <li key={e} className="flex items-start gap-3 rounded-lg border border-border bg-card p-4">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                  <span className="text-sm text-foreground/85">{e}</span>
-                </li>
-              ))}
-            </ul>
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-primary">Eligibility</p>
+        <h2 className="font-serif text-3xl font-bold leading-tight md:text-4xl">Which route applies to you?</h2>
+        <p className="mt-3 max-w-2xl text-muted-foreground">EWU accepts students across multiple credentialing systems. Pick the route that matches your background.</p>
 
-            <h2 className="mt-12 font-serif text-3xl font-bold">Application process</h2>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {ELIGIBILITY.map((e) => (
+            <div key={e.title} className="group overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:border-primary hover:shadow-brick">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <img src={img(e.img)} alt={e.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent" />
+                <CheckCircle2 className="absolute right-3 top-3 h-5 w-5 text-gold" />
+                <h3 className="absolute bottom-3 left-4 right-4 font-serif text-base font-bold text-white leading-tight">{e.title}</h3>
+              </div>
+              <div className="p-5">
+                <p className="text-sm text-muted-foreground">{e.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Application process + sidebar */}
+      <section className="bg-card border-y border-border">
+        <div className="mx-auto max-w-7xl grid gap-10 px-6 py-16 lg:grid-cols-[1.4fr_1fr]">
+          <div>
+            <h2 className="font-serif text-3xl font-bold">Application process</h2>
             <ol className="mt-5 space-y-4">
               {[
                 ["Create your application", "Register at admission.ewubd.edu with a valid email and mobile."],
@@ -52,7 +69,7 @@ function AdmissionPage() {
                 ["Sit the admission test", "Held on campus; subjects vary by program."],
                 ["Receive offer & enrol", "Pay first-semester tuition to secure your seat."],
               ].map(([t, b], i) => (
-                <li key={t} className="flex gap-4 rounded-lg border border-border bg-card p-5">
+                <li key={t} className="flex gap-4 rounded-lg border border-border bg-background p-5">
                   <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-primary font-bold text-primary-foreground">{i + 1}</span>
                   <div>
                     <h3 className="font-semibold">{t}</h3>
@@ -64,7 +81,7 @@ function AdmissionPage() {
           </div>
 
           <aside className="space-y-5">
-            <div className="rounded-2xl border border-border bg-card p-6">
+            <div className="rounded-2xl border border-border bg-background p-6">
               <Clock className="h-6 w-6 text-primary" />
               <h3 className="mt-3 font-serif text-lg font-bold">Important dates</h3>
               <dl className="mt-4 space-y-3 text-sm">
@@ -83,7 +100,7 @@ function AdmissionPage() {
               </dl>
             </div>
 
-            <div className="rounded-2xl border border-border bg-card p-6">
+            <div className="rounded-2xl border border-border bg-background p-6">
               <Wallet className="h-6 w-6 text-primary" />
               <h3 className="mt-3 font-serif text-lg font-bold">Tuition (per semester)</h3>
               <dl className="mt-4 space-y-3 text-sm">
@@ -99,7 +116,7 @@ function AdmissionPage() {
                   </div>
                 ))}
               </dl>
-              <p className="mt-3 text-xs text-muted-foreground">Indicative , actual fees depend on credit load.</p>
+              <p className="mt-3 text-xs text-muted-foreground">Indicative, actual fees depend on credit load.</p>
             </div>
 
             <a className="block rounded-2xl brand-gradient p-6 text-primary-foreground shadow-brick">
@@ -114,45 +131,45 @@ function AdmissionPage() {
         </div>
       </section>
 
-      <section className="bg-card border-y border-border">
-        <div className="mx-auto max-w-7xl px-6 py-16">
-          <div className="flex items-center gap-3">
-            <Award className="h-7 w-7 text-gold" />
-            <h2 className="font-serif text-3xl font-bold">Scholarships & financial aid</h2>
-          </div>
-          <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-            {SCHOLARSHIPS.map((s, i) => (
-              <li key={i} className="flex items-start gap-3 rounded-xl border border-border bg-background p-4">
-                <Award className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                <span className="text-sm text-foreground/85">{s}</span>
-              </li>
-            ))}
-          </ul>
+      <section className="mx-auto max-w-7xl px-6 py-16">
+        <div className="flex items-center gap-3">
+          <Award className="h-7 w-7 text-gold" />
+          <h2 className="font-serif text-3xl font-bold">Scholarships & financial aid</h2>
         </div>
+        <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+          {SCHOLARSHIPS.map((s, i) => (
+            <li key={i} className="flex items-start gap-3 rounded-xl border border-border bg-card p-4">
+              <Award className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+              <span className="text-sm text-foreground/85">{s}</span>
+            </li>
+          ))}
+        </ul>
       </section>
 
-      <section className="mx-auto max-w-3xl px-6 py-16">
-        <h2 className="font-serif text-2xl font-bold text-center">Admission inquiry</h2>
-        <p className="mt-2 text-center text-sm text-muted-foreground">Send a quick message and our admission office will reply within 24 hours.</p>
-        <form onSubmit={(e) => e.preventDefault()} className="mt-8 space-y-4 rounded-2xl border border-border bg-card p-6">
-          <div className="grid gap-4 sm:grid-cols-2">
-            <input required placeholder="Full name" className="rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary" />
-            <input required type="email" placeholder="Email" className="rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary" />
-            <input required placeholder="Mobile (e.g. +8801…)" className="rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary" />
-            <select required className="rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary">
-              <option value="">Program of interest</option>
-              <option>BSc in CSE</option>
-              <option>BSc in EEE</option>
-              <option>BBA</option>
-              <option>Pharmacy</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <textarea rows={4} placeholder="Your message" className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary" />
-          <button type="submit" className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-primary-deep">
-            Send inquiry <ArrowRight className="h-4 w-4" />
-          </button>
-        </form>
+      <section className="bg-card border-y border-border">
+        <div className="mx-auto max-w-3xl px-6 py-16">
+          <h2 className="font-serif text-2xl font-bold text-center">Admission inquiry</h2>
+          <p className="mt-2 text-center text-sm text-muted-foreground">Send a quick message and our admission office will reply within 24 hours.</p>
+          <form onSubmit={(e) => e.preventDefault()} className="mt-8 space-y-4 rounded-2xl border border-border bg-background p-6">
+            <div className="grid gap-4 sm:grid-cols-2">
+              <input required placeholder="Full name" className="rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary" />
+              <input required type="email" placeholder="Email" className="rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary" />
+              <input required placeholder="Mobile (e.g. +8801…)" className="rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary" />
+              <select required className="rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary">
+                <option value="">Program of interest</option>
+                <option>BSc in CSE</option>
+                <option>BSc in EEE</option>
+                <option>BBA</option>
+                <option>Pharmacy</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <textarea rows={4} placeholder="Your message" className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary" />
+            <button type="submit" className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-primary-deep">
+              Send inquiry <ArrowRight className="h-4 w-4" />
+            </button>
+          </form>
+        </div>
       </section>
     </div>
   );
