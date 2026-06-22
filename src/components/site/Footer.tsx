@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Facebook, Instagram, Youtube, Twitter, Linkedin, MapPin, Phone, Mail, AlertTriangle } from "lucide-react";
+import { Facebook, Instagram, Youtube, Twitter, Linkedin, MapPin, Phone, Mail, LifeBuoy } from "lucide-react";
 import { Logo } from "./Logo";
 import { SITE } from "@/lib/site-data";
 
@@ -10,7 +10,7 @@ export function Footer() {
         <div>
           <Logo />
           <p className="mt-4 max-w-xs text-sm text-muted-foreground">
-            East West University , a leading private university in Bangladesh, building tomorrow's leaders since 1996.
+            East West University, a leading private university in Bangladesh, building tomorrow's leaders since 1996.
           </p>
           <div className="mt-5 flex items-center gap-2">
             {[
@@ -68,18 +68,21 @@ export function Footer() {
             <li className="flex gap-2"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />{SITE.address}</li>
             <li className="flex gap-2"><Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />{SITE.phone}</li>
             <li className="flex gap-2"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-primary" />{SITE.email}</li>
-            <li className="mt-2 flex gap-2 rounded-lg border border-destructive/30 bg-destructive/10 p-3 text-destructive">
-              <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
-              <span><strong className="font-semibold">Emergency: </strong>{SITE.emergency}</span>
+            <li className="mt-2 flex gap-2 rounded-lg border border-primary/20 bg-primary-soft/40 p-3">
+              <LifeBuoy className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+              <span className="text-foreground/85">
+                <strong className="font-semibold text-primary-deep">24/7 Campus Helpline </strong>
+                <br />
+                {SITE.emergency}
+              </span>
             </li>
           </ul>
         </div>
       </div>
 
       <div className="border-t border-border">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-5 text-xs text-muted-foreground md:flex-row">
+        <div className="mx-auto flex max-w-7xl items-center justify-center px-6 py-5 text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} East West University. All rights reserved.</p>
-          <p>Designed for academic excellence · Made in Dhaka, Bangladesh.</p>
         </div>
       </div>
     </footer>

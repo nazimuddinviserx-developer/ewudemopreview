@@ -5,9 +5,9 @@ export const SITE = {
   short: "EWU",
   tagline: "Excellence in Education",
   address: "A/2, Jahurul Islam Avenue, Jahurul Islam City, Aftabnagar, Dhaka-1212, Bangladesh",
-  phone: "+880 9666 775577",
-  emergency: "+880 1755 587224",
-  email: "info@ewubd.edu",
+  phone: "+880 1XXX-000 000",
+  emergency: "+880 1XXX-000 911",
+  email: "hello@example-ewu.edu",
   socials: {
     facebook: "https://facebook.com/ewubd",
     instagram: "https://instagram.com/ewubd",
