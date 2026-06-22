@@ -85,6 +85,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "East West University , Excellence in Education" },
       { name: "twitter:description", content: "EWU Digital Campus is a modern, responsive website for East West University, showcasing programs, faculty, and campus life." },
+      { name: "description", content: "EWU Digital Campus is a modern, responsive website for East West University, showcasing programs, faculty, and campus life." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/00971586-5f42-4806-8411-41d6661b796e/id-preview-f22d9488--3ef3c03b-b6f5-448f-9cb5-9a8a5451dca7.lovable.app-1782145483250.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/00971586-5f42-4806-8411-41d6661b796e/id-preview-f22d9488--3ef3c03b-b6f5-448f-9cb5-9a8a5451dca7.lovable.app-1782145483250.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
