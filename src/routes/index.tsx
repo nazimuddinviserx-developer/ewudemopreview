@@ -361,7 +361,7 @@ function Testimonial() {
     <section className="mx-auto max-w-4xl px-6 py-20 text-center">
       <Quote className="mx-auto h-10 w-10 text-gold" />
       <p className="mt-6 font-serif text-2xl leading-snug text-foreground md:text-3xl text-balance">
-        "EWU gave me more than a degree — it gave me a network, a research lab, and the confidence to launch
+        "EWU gave me more than a degree. It gave me a network, a research lab, and the confidence to launch
         a fintech that now serves 200,000 users across Bangladesh."
       </p>
       <p className="mt-6 text-sm font-semibold">Tahmid Karim</p>
