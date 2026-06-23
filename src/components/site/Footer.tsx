@@ -5,8 +5,9 @@ import { SITE } from "@/lib/site-data";
 
 export function Footer() {
   return (
-    <footer className="mt-24 border-t border-border bg-card text-foreground">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 py-14 md:grid-cols-2 lg:grid-cols-4">
+    <footer className="border-t border-border bg-card pt-32 text-foreground">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 pb-14 md:grid-cols-2 lg:grid-cols-4">
+
         <div>
           <Logo />
           <p className="mt-4 max-w-xs text-sm text-muted-foreground">
