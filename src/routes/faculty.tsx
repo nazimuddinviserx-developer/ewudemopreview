@@ -3,7 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { FACULTY, DEPARTMENTS } from "@/lib/site-data";
 import { img } from "@/lib/images";
-import { Search } from "lucide-react";
+import { Search, Share2 } from "lucide-react";
 
 export const Route = createFileRoute("/faculty")({
   head: () => ({
@@ -56,32 +56,36 @@ function FacultyDirectory() {
 
         <p className="mt-4 text-xs text-muted-foreground">{filtered.length} faculty member{filtered.length === 1 ? "" : "s"}</p>
 
-        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((f) => {
-            const d = DEPARTMENTS.find((x) => x.slug === f.dept);
-            return (
-              <Link key={f.id} to="/faculty/$id" params={{ id: f.id }} className="group overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:border-primary hover:shadow-brick">
-                <div className="relative aspect-[4/3] overflow-hidden">
+        <div className="mt-10 text-center">
+          <p className="text-xs font-bold uppercase tracking-widest text-gold">Our Faculty</p>
+          <h2 className="mt-2 font-serif text-3xl font-bold sm:text-4xl">Meet Our Expert Faculty</h2>
+        </div>
+
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {filtered.map((f) => (
+            <article key={f.id} className="group relative rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:shadow-brick">
+              <Link to="/faculty/$id" params={{ id: f.id }} className="block">
+                <div className="relative aspect-[3/4] overflow-hidden rounded-t-2xl">
                   <img src={img(f.img)} alt={f.name} className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent" />
-                  <span className="absolute left-3 top-3 rounded-full bg-gold/95 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-gold-foreground">{d?.short}</span>
-                  <div className="absolute bottom-3 left-4 right-4 text-white">
-                    <h3 className="font-serif text-lg font-bold leading-tight">{f.name}</h3>
-                    <p className="text-xs text-white/85">{f.designation}</p>
-                  </div>
                 </div>
-                <div className="p-5">
-                  <div className="flex flex-wrap gap-1.5">
-                    {f.interests.slice(0, 3).map((i) => (
-                      <span key={i} className="rounded-full bg-primary-soft px-2.5 py-1 text-[11px] font-medium text-primary-deep">{i}</span>
-                    ))}
-                  </div>
+                <div className="p-5 pb-8 text-center">
+                  <h3 className="font-serif text-base font-bold leading-tight">{f.name}</h3>
+                  <p className="mt-1 text-xs text-muted-foreground">{f.designation}</p>
                 </div>
               </Link>
-            );
-          })}
+              <Link
+                to="/faculty/$id"
+                params={{ id: f.id }}
+                aria-label={`${f.name} profile`}
+                className="absolute -bottom-5 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-gold text-gold-foreground shadow-md transition-transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-ring"
+              >
+                <Share2 className="h-4 w-4" />
+              </Link>
+            </article>
+          ))}
         </div>
       </section>
     </div>
   );
 }
+
