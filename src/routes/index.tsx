@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight, GraduationCap, BookOpen, Microscope, Trophy, Users, Building2,
-  Calendar, HelpCircle, Sparkles, Award, Quote, ArrowUpRight,
+  Calendar, HelpCircle, Sparkles, Award, Quote, ArrowUpRight, Share2,
   Monitor, FlaskConical, Mic2, Utensils, HeartPulse, Bus,
 } from "lucide-react";
 import * as React from "react";
