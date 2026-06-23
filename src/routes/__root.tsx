@@ -17,6 +17,7 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { FloatingFeedback } from "@/components/site/FloatingFeedback";
 import { FloatingChatbot } from "@/components/site/FloatingChatbot";
+import { AdmissionCTA } from "@/components/site/AdmissionCTA";
 
 function NotFoundComponent() {
   return (
@@ -124,6 +125,7 @@ function RootComponent() {
           <main className="flex-1">
             <Outlet />
           </main>
+          <AdmissionCTA />
           <Footer />
           <FloatingFeedback />
           <FloatingChatbot />
