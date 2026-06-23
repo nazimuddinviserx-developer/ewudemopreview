@@ -64,26 +64,27 @@ function FacultyDirectory() {
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {filtered.map((f) => (
             <article key={f.id} className="group relative rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:shadow-brick">
-              <Link to="/faculty/$id" params={{ id: f.id }} className="block">
-                <div className="relative aspect-[3/4] overflow-hidden rounded-t-2xl">
+              <div className="relative aspect-[3/4] overflow-hidden rounded-t-2xl">
+                <Link to="/faculty/$id" params={{ id: f.id }} className="block h-full w-full">
                   <img src={img(f.img)} alt={f.name} className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-                </div>
-                <div className="p-5 pb-8 text-center">
-                  <h3 className="font-serif text-base font-bold leading-tight">{f.name}</h3>
-                  <p className="mt-1 text-xs text-muted-foreground">{f.designation}</p>
-                </div>
-              </Link>
-              <Link
-                to="/faculty/$id"
-                params={{ id: f.id }}
-                aria-label={`${f.name} profile`}
-                className="absolute -bottom-5 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-gold text-gold-foreground shadow-md transition-transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-ring"
-              >
-                <Share2 className="h-4 w-4" />
+                </Link>
+                <Link
+                  to="/faculty/$id"
+                  params={{ id: f.id }}
+                  aria-label={`${f.name} profile`}
+                  className="absolute -bottom-5 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-gold text-gold-foreground shadow-md transition-transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-ring"
+                >
+                  <Share2 className="h-4 w-4" />
+                </Link>
+              </div>
+              <Link to="/faculty/$id" params={{ id: f.id }} className="block p-5 pt-8 pb-8 text-center">
+                <h3 className="font-serif text-base font-bold leading-tight">{f.name}</h3>
+                <p className="mt-1 text-xs text-muted-foreground">{f.designation}</p>
               </Link>
             </article>
           ))}
         </div>
+
       </section>
     </div>
   );
